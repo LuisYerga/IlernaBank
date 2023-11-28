@@ -25,13 +25,15 @@
     </header>
     <main>
         <div id="CrearCuenta" class="formInicio">
-            <input type="text" placeholder="Nombre" id="nombre" name="nombre"> <br>
-            <input type="text" placeholder="Apellido" id="apellido" name="apellido"><br>
-            <input type="text" placeholder="DNI" id="DNI" name="DNI"><br>
-            <input type="text" placeholder="Email" id="email" name="email"><br>
-            <input type="text" placeholder="Contraseña" id="contraseña" name="contraseña"><br>
-            <input type="text" placeholder="País" id="pais" name="pais"><br>
-            <button type="button">Crear cuenta</button><br>
+            <form action="../conexiones/insertUser.php" method="POST">
+                <input type="text" placeholder="Nombre" id="nombre" name="nombre"> <br>
+                <input type="text" placeholder="Apellido" id="apellido" name="apellido"><br>
+                <input type="text" placeholder="DNI" id="DNI" name="DNI"><br>
+                <input type="text" placeholder="Email" id="email" name="email"><br>
+                <input type="text" placeholder="Contraseña" id="contraseña" name="contraseña"><br>
+                <input type="text" placeholder="País" id="pais" name="pais"><br>
+                <button type="submit" name="Enviar">Crear cuenta</button><br>
+            </form>
             <label>¿Ya tienes una cuenta?</label>
             <a href="login.php"><label>Iniciar sesión</label></a>
         </div>
