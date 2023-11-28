@@ -1,0 +1,17 @@
+header{
+    background-color: $color-header;
+}
+
+.headerAcceso{
+    display:grid;
+    justify-content: center;
+    padding-bottom: 2vh;
+    img{
+        width: 300px;
+    }
+    h1{
+        font-size: 50px;
+        text-align: center;
+        margin: 0%;
+    }
+}

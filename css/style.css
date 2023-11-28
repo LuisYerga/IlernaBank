@@ -1,0 +1,40 @@
+header {
+  background-color: #fcfcfc;
+}
+
+.headerAcceso {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 2vh;
+}
+.headerAcceso img {
+  width: 300px;
+}
+.headerAcceso h1 {
+  font-size: 50px;
+  text-align: center;
+  margin: 0%;
+}
+
+body {
+  margin: 0%;
+}
+
+.formInicio {
+  color: #d9d9d9;
+  background-color: #151515;
+  text-align: center;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 4vh;
+}
+
+html {
+  background-color: #151515;
+}
