@@ -3,6 +3,6 @@
 $servername= "localhost";
 $username= "root";
 $pasword="";
-$database="Esteban&Co";
+$database="EstebanCo";
 
 $conexion= mysqli_connect($servername,$username,$pasword,$database) or die("Algo salio mal");

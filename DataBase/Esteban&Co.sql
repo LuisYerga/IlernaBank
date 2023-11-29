@@ -4,11 +4,12 @@ Create Database EstebanCo;
 use EstebanCo;
 
 Create table perfil(
-iban int primary key,
+iban varchar(50) primary key,
 nombre varchar(25),
 apellidos varchar(40),
 dni varchar(9),
 email varchar(35),
+contrasena varchar(15),
 fecha_nacimiento date,
 direccion varchar(30),
 ciudad varchar(25),
@@ -19,7 +20,7 @@ saldo float
 );
 
 Create table rol(
-id_perfil int primary key,
+id_perfil varchar(50) primary key,
 tipo_rol boolean,
 foreign key (id_perfil) references perfil(iban)
 );
@@ -27,16 +28,16 @@ foreign key (id_perfil) references perfil(iban)
 Create table contacto(
 id_contacto int primary key auto_increment,
 nombre_agregado varchar(15),
-id_usuario int,
-id_agregado int,
+id_usuario varchar(50),
+id_agregado varchar(50),
 foreign key (id_usuario) references perfil(iban),
 foreign key (id_agregado) references perfil(iban)
 );
 
 Create table mensajes(
 id_mensajes int primary key auto_increment,
-id_destinatario int,
-id_remitente int,
+id_destinatario varchar(50),
+id_remitente varchar(50),
 mensaje varchar(150),
 foreign key (id_destinatario) references contacto(id_agregado),
 foreign key (id_remitente) references contacto(id_usuario)
@@ -50,7 +51,7 @@ cantidad_prestamo float,
 solicitud_activa boolean,
 final_prestamo date,
 estado boolean,
-id_solicitante int,
+id_solicitante varchar(50),
 foreign key (id_solicitante) references perfil(iban)
 );
 
@@ -61,7 +62,7 @@ id_operaciones int primary key auto_increment,
 fecha date,
 cantidad float,
 descripcion varchar(20),
-id_realizador int,
+id_realizador varchar(50),
 foreign key (id_realizador) references perfil(iban)
 );
 
@@ -70,7 +71,7 @@ foreign key (id_realizador) references perfil(iban)
 Create table gestion(
 id_gestion int primary key auto_increment,
 id_operacion_gestion int,
-id_realizador_gestion int,
+id_realizador_gestion varchar(50),
 fecha_gestion date,
 cantidad_gestion float,
 tipo varchar(20),
@@ -87,8 +88,8 @@ id_operacion_bizum int,
 concepto varchar(10),
 fecha_bizum date,
 cantidad_bizum float,
-id_realizador_bizum int,
-id_recibidor_bizum int,
+id_realizador_bizum varchar(50),
+id_recibidor_bizum varchar(50),
 foreign key (id_operacion_bizum) references operaciones(id_operaciones),
 /*foreign key (concepto) references operaciones(descripcion),
 foreign key (fecha_bizum) references operaciones(fecha),

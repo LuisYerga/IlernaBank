@@ -27,10 +27,11 @@
         <div id="CrearCuenta" class="formInicio">
             <form action="../conexiones/insertUser.php" method="POST">
                 <input type="text" placeholder="Nombre" id="nombre" name="nombre"> <br>
-                <input type="text" placeholder="Apellido" id="apellido" name="apellido"><br>
-                <input type="text" placeholder="DNI" id="DNI" name="DNI"><br>
+                <input type="text" placeholder="Apellido" id="apellidos" name="apellidos"><br>
+                <input type="text" placeholder="DNI" id="dni" name="dni"><br>
+                <input type="text" placeholder="Fecha de nacimiento" id="f_nacimiento" name="f_nacimiento"><br>
                 <input type="text" placeholder="Email" id="email" name="email"><br>
-                <input type="text" placeholder="Contraseña" id="contraseña" name="contraseña"><br>
+                <input type="text" placeholder="Contraseña" id="contrasena" name="contrasena"><br>
                 <input type="text" placeholder="País" id="pais" name="pais"><br>
                 <button type="submit" name="Enviar">Crear cuenta</button><br>
             </form>
