@@ -25,10 +25,10 @@
     </header>
     <main>
         <div id="InicioSesion" class="formInicio">
-            <form action="../conexiones/" method="POST">
-                <input type="text" placeholder="Email" id="usuario" name="usuario"> <br>
-                <input type="text" placeholder="Contraseña" id="contraseña" name="contraseña"><br>
-                <button type="button">Iniciar Sesión</button><br>
+            <form action="../conexiones/logUser.php" method="POST">
+                <input type="text" placeholder="Email" id="email" name="email"> <br>
+                <input type="text" placeholder="Contraseña" id="contrasena" name="contrasena"><br>
+                <button type="submit" name="Enviar">Iniciar Sesión</button><br>
             </form>
             <label>¿Aun no tienes una cuenta con nosotros?</label>
             <a href="signin.php"><label>Crear nueva cuenta</label></a>

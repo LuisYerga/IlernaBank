@@ -8,7 +8,7 @@ if(isset($_POST['nombre'], $_POST['apellidos'], $_POST['dni'],$_POST['f_nacimien
     $dni = $_POST['dni'];
     $f_nacimiento=date('Y-m-d', strtotime($_POST['f_nacimiento']));
     $email = $_POST['email'];
-    $contrasena = $_POST['contrasena'];
+    $contrasena = password_hash($_POST['contrasena'], PASSWORD_DEFAULT);
     $pais = $_POST['pais'];
 
     function calcularIban($nombre, $conexion){
@@ -39,14 +39,16 @@ if(isset($_POST['nombre'], $_POST['apellidos'], $_POST['dni'],$_POST['f_nacimien
 
     $iban=calcularIban($nombre, $conexion);
 
-    $consulta = "INSERT INTO perfil(iban, nombre, apellidos, dni, email, contrasena, fecha_nacimiento, direccion, ciudad, codigo_postal, provincia, pais, saldo) VALUES ('$iban','$nombre', '$apellidos', '$dni', '$email', '$contrasena', '$f_nacimiento', 'null', 'null', 'null', 'null', '$pais', 'null')";
-    $result=$conexion->query($consulta);
+    $insertPerfil = "INSERT INTO perfil(iban, nombre, apellidos, dni, email, contrasena, fecha_nacimiento, direccion, ciudad, codigo_postal, provincia, pais, saldo) VALUES ('$iban','$nombre', '$apellidos', '$dni', '$email', '$contrasena', '$f_nacimiento', 'null', 'null', 'null', 'null', '$pais', 'null')";
+    $result=$conexion->query($insertPerfil);
+
+    $insertRol= "INSERT INTO rol(id_perfil, tipo_rol) VALUES ('$iban', 'usuario')";
+    $result=$conexion->query($insertRol);
 
     if ($result) {
         echo "¡Usuario creado exitosamente!";
     } else {
         echo "Error en la creación del usuario: " . $conexion->error;
     }
-
 
 }

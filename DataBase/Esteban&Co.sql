@@ -8,7 +8,7 @@ iban varchar(50) primary key,
 nombre varchar(25),
 apellidos varchar(40),
 dni varchar(9),
-email varchar(35),
+email varchar(50),
 contrasena varchar(15),
 fecha_nacimiento date,
 direccion varchar(30),
@@ -21,7 +21,7 @@ saldo float
 
 Create table rol(
 id_perfil varchar(50) primary key,
-tipo_rol boolean,
+tipo_rol enum('admin','usuario'),
 foreign key (id_perfil) references perfil(iban)
 );
 
@@ -97,3 +97,6 @@ foreign key (cantidad_bizum) references operaciones(cantidad),*/
 foreign key (id_realizador_bizum) references operaciones(id_realizador),
 foreign key (id_recibidor_bizum) references contacto(id_agregado)
 );
+
+INSERT INTO perfil(iban, nombre, apellidos, dni, email, contrasena, fecha_nacimiento, direccion, ciudad, codigo_postal, provincia, pais, saldo) VALUES (1111111,'adimistrador', 'administrador', null, 'adminestebanco1@gmail.com', 'LuisYerga', null, null, null, null, null, null, null);
+INSERT INTO rol(id_perfil, tipo_rol) VALUES (1111111, 'usuario');
