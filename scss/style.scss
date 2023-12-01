@@ -3,6 +3,10 @@ $color-header:#fcfcfc;
 $contraste-negro:#232323;
 $contraste-blanco:#d9d9d9;
 
+html{
+    background-color: $color-fondo;
+}
+
 @import "components/header.scss";
 
 
@@ -10,11 +14,6 @@ body{
     margin: 0%;
 }
 
-@import "components/formIncicio.scss";
+@import "components/formInicio.scss";
 
-html{
-    background-color: $color-fondo;
-}
-
-
-
+@import "components/paginaInicio.scss";

@@ -14,10 +14,16 @@
 <body>
      <header>
         <div class="headerPaginas">
+          <div class="esteban">
             <img src="../../img/Esteban&Co.png">
+          </div> 
+          <div class="titulo">
             <h1>Esteban&Co</h1>
+          </div>
+          <div class="iconosMenu">
             <img src="../../img/correo.png">
             <img src="../../img/usu.png">
+          </div>
         </div>
     </header>
     <main>
@@ -30,7 +36,7 @@
                 <h5>Últimos movimientos</h5>
                 <h5>Realizar operación</h5>
                 <button name="Retirar">Retirar dinero</button>
-                <button name="Ingresar">Ingresar dinero</button>
+                <button name="Ingresar">Ingresar maricones</button>
             </div>
         </section>
         <section class="aside">
