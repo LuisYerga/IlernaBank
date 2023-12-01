@@ -37,18 +37,49 @@ if(isset($_POST['nombre'], $_POST['apellidos'], $_POST['dni'],$_POST['f_nacimien
         return $iban;
     }
 
-    $iban=calcularIban($nombre, $conexion);
+    function verificarEmail($email, $conexion){
+        $repeticion_Email=false;
+        $consulta_Email= "SELECT email FROM perfil WHERE email='$email'";
+        $resultado_Email= $conexion->query($consulta_Email);
 
-    $insertPerfil = "INSERT INTO perfil(iban, nombre, apellidos, dni, email, contrasena, fecha_nacimiento, direccion, ciudad, codigo_postal, provincia, pais, saldo) VALUES ('$iban','$nombre', '$apellidos', '$dni', '$email', '$contrasena', '$f_nacimiento', 'null', 'null', 'null', 'null', '$pais', 'null')";
-    $result=$conexion->query($insertPerfil);
-
-    $insertRol= "INSERT INTO rol(id_perfil, tipo_rol) VALUES ('$iban', 'usuario')";
-    $result=$conexion->query($insertRol);
-
-    if ($result) {
-        echo "¡Usuario creado exitosamente!";
-    } else {
-        echo "Error en la creación del usuario: " . $conexion->error;
+        if($resultado_Email->num_rows != 0){
+            $repeticion_Email=false;
+        }else{
+            $repeticion_Email=true;
+        }
+        return $repeticion_Email;
     }
 
+    function verificarDni($dni, $conexion){
+        $repeticion_Dni=false;
+        $consulta_Dni= "SELECT dni FROM perfil WHERE dni='$dni'";
+        $resultado_Dni= $conexion->query($consulta_Dni);
+
+        if($resultado_Dni->num_rows != 0){
+            $repeticion_Dni=false;
+        }else{
+            $repeticion_Dni=true;
+        }
+        return $repeticion_Dni;
+    }
+
+    $iban=calcularIban($nombre, $conexion);
+    $verificadorEmail=verificarEmail($email, $conexion);
+    $verificadorDni=verificarDni($dni, $conexion);
+
+    if($verificadorDni===true && $verificadorEmail===true){
+        $insertPerfil = "INSERT INTO perfil(iban, nombre, apellidos, dni, email, contrasena, fecha_nacimiento, direccion, ciudad, codigo_postal, provincia, pais, saldo) VALUES ('$iban','$nombre', '$apellidos', '$dni', '$email', '$contrasena', '$f_nacimiento', 'null', 'null', 'null', 'null', '$pais', 'null')";
+        $result=$conexion->query($insertPerfil);
+
+        $insertRol= "INSERT INTO rol(id_perfil, tipo_rol) VALUES ('$iban', 'usuario')";
+        $result=$conexion->query($insertRol);
+
+        if ($result) {
+            echo "¡Usuario creado exitosamente!";
+        } else {
+            echo "Error en la creación del usuario: " . $conexion->error;
+        }
+    }else{
+        echo $verificadorDni=== false ? 'dni repetido' : 'email repetido';
+    }
 }

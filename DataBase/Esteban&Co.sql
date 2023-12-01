@@ -9,7 +9,7 @@ nombre varchar(25),
 apellidos varchar(40),
 dni varchar(9),
 email varchar(50),
-contrasena varchar(15),
+contrasena varchar(255),
 fecha_nacimiento date,
 direccion varchar(30),
 ciudad varchar(25),
@@ -98,5 +98,5 @@ foreign key (id_realizador_bizum) references operaciones(id_realizador),
 foreign key (id_recibidor_bizum) references contacto(id_agregado)
 );
 
-INSERT INTO perfil(iban, nombre, apellidos, dni, email, contrasena, fecha_nacimiento, direccion, ciudad, codigo_postal, provincia, pais, saldo) VALUES (1111111,'adimistrador', 'administrador', null, 'adminestebanco1@gmail.com', 'LuisYerga', null, null, null, null, null, null, null);
+INSERT INTO perfil(iban, nombre, apellidos, dni, email, contrasena, fecha_nacimiento, direccion, ciudad, codigo_postal, provincia, pais, saldo) VALUES (1111111,'adimistrador', 'administrador', null, 'adminestebanco1@gmail.com', '$2y$10$cxhq5tCAhqaduSMEa3vbEOHh9PlVZ9sIiMC147gKmKrBr3KM5cEky', null, null, null, null, null, null, null);
 INSERT INTO rol(id_perfil, tipo_rol) VALUES (1111111, 'usuario');
