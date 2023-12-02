@@ -2,6 +2,10 @@ html {
   background-color: #151515;
 }
 
+body {
+  margin: 0%;
+}
+
 header {
   background-color: #fcfcfc;
 }
@@ -52,10 +56,6 @@ header {
   padding-top: 10px;
 }
 
-body {
-  margin: 0%;
-}
-
 .formInicio {
   color: #d9d9d9;
   background-color: #151515;
@@ -66,14 +66,4 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   padding-top: 4vh;
-}
-
-.principal {
-  background-color: #151515;
-}
-
-.container {
-  padding-top: 3vh;
-  text-align: center;
-  color: #d9d9d9;
 }

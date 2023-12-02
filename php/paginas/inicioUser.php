@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
     <link href="../../css/style.css" rel="stylesheet">
+    <link href="../../css/styleInicio.css" rel="stylesheet">
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -36,10 +37,11 @@
                 <h5>Últimos movimientos</h5>
                 <h5>Realizar operación</h5>
                 <button name="Retirar">Retirar dinero</button>
-                <button name="Ingresar">Ingresar maricones</button>
+                <button name="Ingresar">Ingresar dinero</button>
             </div>
         </section>
         <section class="aside">
+          
         </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
