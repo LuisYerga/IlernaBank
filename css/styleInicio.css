@@ -1,9 +1,42 @@
 .principal {
   background-color: #151515;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .container {
   padding-top: 3vh;
   text-align: center;
   color: #d9d9d9;
+}
+
+.aside {
+  height: 100vh;
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  background-color: #232323;
+  color: #d9d9d9;
+  position: fixed;
+  top: 10;
+  right: 0;
+  -webkit-transition: opacity 0.4s ease, width 0.4s ease;
+  transition: opacity 0.4s ease, width 0.4s ease;
+}
+
+#menu {
+  border: none;
+  background-color: #fcfcfc;
+}
+
+.aside.active {
+  opacity: 1;
+  width: 300px;
 }
