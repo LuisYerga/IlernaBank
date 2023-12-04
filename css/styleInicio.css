@@ -31,12 +31,48 @@
   transition: opacity 0.4s ease, width 0.4s ease;
 }
 
-#menu {
-  border: none;
-  background-color: #fcfcfc;
+.aside img {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .aside.active {
   opacity: 1;
   width: 300px;
+}
+
+#menu {
+  border: none;
+  background-color: #fcfcfc;
+}
+
+.head {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.opciones {
+  margin-top: 1vh;
+}
+
+.option {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  border: none;
+  text-decoration: none;
+  background-color: #232323;
+  color: #d9d9d9;
+}
+
+.opciones .salida {
+  padding-top: 60vh !important;
 }

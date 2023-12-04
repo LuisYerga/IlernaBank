@@ -1,35 +1,63 @@
 .principal{
-    background-color: $color-fondo;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: $color-fondo;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container{
-    padding-top: 3vh;
-    text-align: center;
-    color: $contraste-blanco;
+  padding-top: 3vh;
+  text-align: center;
+  color: $contraste-blanco;
 }
 
 .aside {
-    height: 100vh;
-    opacity: 0; 
-    width: 0; 
-    overflow: hidden; 
-    background-color: $contraste-negro;
-    color: $contraste-blanco;
-    position: fixed;
-    top: 10;
-    right: 0;
-    transition: opacity 0.4s ease, width 0.4s ease;
-  }
-  
-  #menu{
-    border: none;
-    background-color: $color-header;
+  height: 100vh;
+  opacity: 0; 
+  width: 0; 
+  overflow: hidden; 
+  background-color: $contraste-negro;
+  color: $contraste-blanco;
+  position: fixed;
+  top: 10;
+  right: 0;
+  transition: opacity 0.4s ease, width 0.4s ease;
 }
-  
-  .aside.active {
-    opacity: 1;
-    width: 300px;
-  }
+.aside img{
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.aside.active {
+  opacity: 1;
+  width: 300px;
+}
+
+#menu{
+  border: none;
+  background-color: $color-header;
+}
+
+.head{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.opciones{
+  margin-top: 1vh;  
+}
+
+.option{
+  display:inline-flex;
+  border: none;
+  text-decoration: none;
+  background-color: $contraste-negro;
+  color: $contraste-blanco;
+}
+
+.opciones .salida{
+  padding-top: 60vh !important;
+}
