@@ -43,9 +43,10 @@
   width: 300px;
 }
 
-#menu {
+.iconosMenu a {
   border: none;
   background-color: #fcfcfc;
+  margin-right: 5px;
 }
 
 .head {
