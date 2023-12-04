@@ -12,6 +12,27 @@ header{
     h1{
         font-size: 50px;
         text-align: center;
-        margin: 0%;
+        margin: 0%; 
+    }
+}
+
+.headerPaginas{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    .esteban{
+        justify-content:left; 
+        margin-left: 1vw;
+    }
+    .esteban img{
+        width: 70px;
+    }
+    .iconosMenu{
+        justify-content: right;
+        margin-right: 1vw;
+    }
+    .iconosMenu img{
+        width: 30px;
+        padding-top: 10px;
     }
 }

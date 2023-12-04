@@ -1,20 +1,13 @@
-$color-fondo:#151515;
-$color-header:#fcfcfc;
-$contraste-negro:#232323;
-$contraste-blanco:#d9d9d9;
-
-@import "components/header.scss";
-
-
-body{
-    margin: 0%;
-}
-
-@import "components/formIncicio.scss";
+@import "components/colores.scss";
 
 html{
     background-color: $color-fondo;
 }
 
+body{
+    margin: 0%;
+}
+@import "components/header.scss";
 
+@import "components/formInicio.scss";
 
