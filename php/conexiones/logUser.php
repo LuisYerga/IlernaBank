@@ -14,11 +14,11 @@ if(isset($_POST['email'], $_POST['contrasena'])){
         $verificador= trim($lista['contrasena']);
         var_dump($contrasena,$verificador);
         if(password_verify($contrasena, $verificador)){
-            echo "Sesion iniciada";
+            header("Location: ../paginas/inicioUser.php");
         }else{
-            echo "Contraseña incorrecta";
+            header("Location: ../paginas/login.php");
         }
     }else{
-        echo "El email no existe";
+        header("Location: ../paginas/login.php");
     }
 }

@@ -75,11 +75,11 @@ if(isset($_POST['nombre'], $_POST['apellidos'], $_POST['dni'],$_POST['f_nacimien
         $result=$conexion->query($insertRol);
 
         if ($result) {
-            echo "¡Usuario creado exitosamente!";
+            header("Location: ../paginas/inicioUser.php");
         } else {
             echo "Error en la creación del usuario: " . $conexion->error;
         }
     }else{
-        echo $verificadorDni=== false ? 'dni repetido' : 'email repetido';
+        header("Location: ../paginas/signin.php");
     }
 }
