@@ -1,0 +1,16 @@
+.principal{
+  background-color: $color-fondo;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  padding-top: 3vh;
+  text-align: center;
+  color: $contraste-blanco;
+}
+  
+section{
+    background-color: $color-fondo;
+}
