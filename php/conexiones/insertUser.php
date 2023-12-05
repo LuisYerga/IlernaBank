@@ -11,6 +11,7 @@ if(isset($_POST['nombre'], $_POST['apellidos'], $_POST['dni'],$_POST['f_nacimien
     $contrasena = password_hash($_POST['contrasena'], PASSWORD_DEFAULT);
     $pais = $_POST['pais'];
 
+    //Creación de funciones
     function calcularIban($nombre, $conexion){
         $letrasIban= strtoupper(substr($nombre,0,4));
         $letrasIban .= str_repeat("Z", 4- strlen($letrasIban));
@@ -62,7 +63,7 @@ if(isset($_POST['nombre'], $_POST['apellidos'], $_POST['dni'],$_POST['f_nacimien
         }
         return $repeticion_Dni;
     }
-
+    
     $iban=calcularIban($nombre, $conexion);
     $verificadorEmail=verificarEmail($email, $conexion);
     $verificadorDni=verificarDni($dni, $conexion);
@@ -75,6 +76,12 @@ if(isset($_POST['nombre'], $_POST['apellidos'], $_POST['dni'],$_POST['f_nacimien
         $result=$conexion->query($insertRol);
 
         if ($result) {
+            if(!isset($_SESSION['iban'])){
+                if(isset($iban)){
+                    session_start();
+                    $_SESSION['iban']=$iban;
+                }
+            }
             header("Location: ../paginas/inicioUser.php");
         } else {
             echo "Error en la creación del usuario: " . $conexion->error;

@@ -53,7 +53,9 @@
   <main>
     <section class="editarPerfil">
       <div class="container">
+        <?php include_once("../conexiones/obtenerPerfil.php");?>
         <h5>Nombre:</h5>
+        <p><?php echo $nombrePerfil;?></p>
       </div>
     </section>
   </main>

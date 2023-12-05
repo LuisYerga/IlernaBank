@@ -12,8 +12,19 @@ if(isset($_POST['email'], $_POST['contrasena'])){
     if($result->num_rows>0){
         $lista= $result->fetch_assoc();
         $verificador= trim($lista['contrasena']);
-        var_dump($contrasena,$verificador);
         if(password_verify($contrasena, $verificador)){
+            if(!isset($_SESSION['iban'])){
+                if(isset($email)){
+                    session_start();
+                    $consultaIban= "SELECT iban FROM perfil WHERE email='$email'";
+                    $resultIban = $conexion->query($consultaIban);
+                    if ($resultIban->num_rows > 0) {
+                        $row = $resultIban->fetch_assoc();
+                        $iban = $row['iban'];
+                        $_SESSION['iban']=$iban;
+                    }
+                }
+            }
             header("Location: ../paginas/inicioUser.php");
         }else{
             header("Location: ../paginas/login.php");
