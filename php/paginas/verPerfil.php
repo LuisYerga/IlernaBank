@@ -56,6 +56,16 @@
         <?php include_once("../conexiones/obtenerPerfil.php");?>
         <h5>Nombre:</h5>
         <p><?php echo $nombrePerfil;?></p>
+        <h5>Apellidos:</h5>
+        <p><?php echo $nombreApellidos;?></p>
+        <h5>DNI:</h5>
+        <p><?php echo $nombreDni;?></p>
+        <h5>Email:</h5>
+        <p><?php echo $nombreEmail;?></p>
+        <h5>Fecha Nacimiento:</h5>
+        <p><?php echo $nombreFnac;?></p>
+        <h5>Dirección:</h5>
+        <p><?php echo $nombreDir;?></p>
       </div>
     </section>
   </main>
