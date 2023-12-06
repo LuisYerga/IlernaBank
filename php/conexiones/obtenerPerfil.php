@@ -64,4 +64,44 @@ if(isset($_SESSION['iban'])){
     } else {
         echo "No se encontró el nombre del perfil.";
     }
+
+    $consultaCod= "SELECT codigo_postal FROM perfil WHERE iban='$iban'";
+    $resultCod = $conexion->query($consultaCod);
+
+    if($resultCod->num_rows > 0) {
+        $row = $resultCod->fetch_assoc(); // 
+        $nombreCod = $row['codigo_postal']; 
+    } else {
+        echo "No se encontró el nombre del perfil.";
+    }
+
+    $consultaCiudad= "SELECT ciudad FROM perfil WHERE iban='$iban'";
+    $resultCiudad = $conexion->query($consultaCiudad);
+
+    if($resultCiudad->num_rows > 0) {
+        $row = $resultCiudad->fetch_assoc(); // 
+        $nombreCiudad = $row['ciudad']; 
+    } else {
+        echo "No se encontró el nombre del perfil.";
+    }
+
+    $consultaProv= "SELECT provincia FROM perfil WHERE iban='$iban'";
+    $resultProv = $conexion->query($consultaProv);
+
+    if($resultProv->num_rows > 0) {
+        $row = $resultProv->fetch_assoc(); // 
+        $nombreProv = $row['provincia']; 
+    } else {
+        echo "No se encontró el nombre del perfil.";
+    }
+
+    $consultaPais= "SELECT pais FROM perfil WHERE iban='$iban'";
+    $resultPais = $conexion->query($consultaPais);
+
+    if($resultPais->num_rows > 0) {
+        $row = $resultPais->fetch_assoc(); // 
+        $nombrePais = $row['pais']; 
+    } else {
+        echo "No se encontró el nombre del perfil.";
+    }
 }

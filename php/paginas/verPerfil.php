@@ -51,7 +51,7 @@
     </div>
   </aside>
   <main>
-    <section class="editarPerfil">
+    <section class="mostrarPerfil">
       <div class="container">
         <?php include_once("../conexiones/obtenerPerfil.php");?>
         <h5>Nombre:</h5>
@@ -66,6 +66,22 @@
         <p><?php echo $nombreFnac;?></p>
         <h5>Dirección:</h5>
         <p><?php echo $nombreDir;?></p>
+      </div>
+    </section>
+    <section class="editarPerfil">
+      <div class="container">
+        <?php include_once("../conexiones/obtenerPerfil.php");?>
+        <h5>Nombre:</h5>
+  
+        <h5>Apellidos:</h5>
+        
+        <h5>DNI:</h5>
+
+        <h5>Email:</h5>
+
+        <h5>Fecha Nacimiento:</h5>
+
+        <h5>Dirección:</h5>
       </div>
     </section>
   </main>
