@@ -7,6 +7,7 @@
     <link href="../../css/headers.css" rel="stylesheet">
     <link href="../../css/desplegable.css" rel="stylesheet">
     <link href="../../css/styleTarjetas.css" rel="stylesheet">
+    <link href="../../css/cambioTarjeta.css" rel="stylesheet">
     <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -51,8 +52,9 @@
     </div>
   </aside>
   <main>
-    <section class="mostrarPerfil">
+    <section class="mostrarPerfil" id="mostrarPerfil">
       <div class="container">
+        <a class="button" id="pincel1"><img src="../../img/pincel.png"></a>
         <?php include_once("../conexiones/obtenerPerfil.php");?>
         <h5>Nombre:</h5>
         <p><?php echo $nombrePerfil;?></p>
@@ -76,8 +78,9 @@
         <p><?php echo $nombreDir;?></p>
       </div>
     </section>
-    <section class="editarPerfil">
+    <section class="editarPerfil active" id="editarPerfil">
       <div class="container">
+        <a class="button" id="pincel2"><img src="../../img/pincel.png"></a>
         <?php include_once("../conexiones/obtenerPerfil.php");?>
         <form action="../conexiones/updateUser.php" method="POST">
           <h5>Nombre:</h5>

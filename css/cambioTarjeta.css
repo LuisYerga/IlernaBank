@@ -1,0 +1,13 @@
+.mostrarPerfil,
+.editarPerfil {
+  display: block;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
+}
+
+.mostrarPerfil.active,
+.editarPerfil.active {
+  display: none;
+  pointer-events: none;
+}

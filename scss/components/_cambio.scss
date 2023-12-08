@@ -1,0 +1,12 @@
+.mostrarPerfil,
+.editarPerfil{
+    display: block;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+}
+
+.mostrarPerfil.active,
+.editarPerfil.active{
+    display: none;
+    pointer-events: none; //Nos aseguramos que no se pueda interactuar en invisible
+}
