@@ -9,7 +9,7 @@ if(isset($_SESSION['iban'])){
     $resultNombre = $conexion->query($consultaNombre);
 
     if($resultNombre->num_rows > 0) {
-        $row = $resultNombre->fetch_assoc(); // 
+        $row = $resultNombre->fetch_assoc(); 
         $nombrePerfil = $row['nombre']; 
     } else {
         echo "No se encontró el nombre del perfil.";
@@ -19,7 +19,7 @@ if(isset($_SESSION['iban'])){
     $resultApellidos = $conexion->query($consultaApellidos);
 
     if($resultApellidos->num_rows > 0) {
-        $row = $resultApellidos->fetch_assoc(); // 
+        $row = $resultApellidos->fetch_assoc(); 
         $nombreApellidos = $row['apellidos']; 
     } else {
         echo "No se encontró el nombre del perfil.";
@@ -29,7 +29,7 @@ if(isset($_SESSION['iban'])){
     $resultDni = $conexion->query($consultaDni);
 
     if($resultDni->num_rows > 0) {
-        $row = $resultDni->fetch_assoc(); // 
+        $row = $resultDni->fetch_assoc(); 
         $nombreDni = $row['dni']; 
     } else {
         echo "No se encontró el nombre del perfil.";
@@ -39,7 +39,7 @@ if(isset($_SESSION['iban'])){
     $resultEmail = $conexion->query($consultaEmail);
 
     if($resultEmail->num_rows > 0) {
-        $row = $resultEmail->fetch_assoc(); // 
+        $row = $resultEmail->fetch_assoc(); 
         $nombreEmail = $row['email']; 
     } else {
         echo "No se encontró el nombre del perfil.";
@@ -49,7 +49,7 @@ if(isset($_SESSION['iban'])){
     $resultFnac = $conexion->query($consultaFnac);
 
     if($resultFnac->num_rows > 0) {
-        $row = $resultFnac->fetch_assoc(); // 
+        $row = $resultFnac->fetch_assoc();
         $nombreFnac = $row['fecha_nacimiento']; 
     } else {
         echo "No se encontró el nombre del perfil.";
@@ -59,7 +59,7 @@ if(isset($_SESSION['iban'])){
     $resultDir = $conexion->query($consultaDir);
 
     if($resultDir->num_rows > 0) {
-        $row = $resultDir->fetch_assoc(); // 
+        $row = $resultDir->fetch_assoc(); 
         $nombreDir = $row['direccion']; 
     } else {
         echo "No se encontró el nombre del perfil.";
@@ -69,7 +69,7 @@ if(isset($_SESSION['iban'])){
     $resultCod = $conexion->query($consultaCod);
 
     if($resultCod->num_rows > 0) {
-        $row = $resultCod->fetch_assoc(); // 
+        $row = $resultCod->fetch_assoc(); 
         $nombreCod = $row['codigo_postal']; 
     } else {
         echo "No se encontró el nombre del perfil.";
@@ -79,7 +79,7 @@ if(isset($_SESSION['iban'])){
     $resultCiudad = $conexion->query($consultaCiudad);
 
     if($resultCiudad->num_rows > 0) {
-        $row = $resultCiudad->fetch_assoc(); // 
+        $row = $resultCiudad->fetch_assoc();
         $nombreCiudad = $row['ciudad']; 
     } else {
         echo "No se encontró el nombre del perfil.";
@@ -89,7 +89,7 @@ if(isset($_SESSION['iban'])){
     $resultProv = $conexion->query($consultaProv);
 
     if($resultProv->num_rows > 0) {
-        $row = $resultProv->fetch_assoc(); // 
+        $row = $resultProv->fetch_assoc(); 
         $nombreProv = $row['provincia']; 
     } else {
         echo "No se encontró el nombre del perfil.";
@@ -99,7 +99,7 @@ if(isset($_SESSION['iban'])){
     $resultPais = $conexion->query($consultaPais);
 
     if($resultPais->num_rows > 0) {
-        $row = $resultPais->fetch_assoc(); // 
+        $row = $resultPais->fetch_assoc(); 
         $nombrePais = $row['pais']; 
     } else {
         echo "No se encontró el nombre del perfil.";

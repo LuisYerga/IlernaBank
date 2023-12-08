@@ -64,6 +64,14 @@
         <p><?php echo $nombreEmail;?></p>
         <h5>Fecha Nacimiento:</h5>
         <p><?php echo $nombreFnac;?></p>
+        <h5>Pais:</h5>
+        <p><?php echo $nombrePais;?></p>
+        <h5>Código postal:</h5>
+        <p><?php echo $nombreCod;?></p>
+        <h5>Provincia:</h5>
+        <p><?php echo $nombreProv;?></p>
+        <h5>Ciudad:</h5>
+        <p><?php echo $nombreCiudad;?></p>
         <h5>Dirección:</h5>
         <p><?php echo $nombreDir;?></p>
       </div>
@@ -71,17 +79,29 @@
     <section class="editarPerfil">
       <div class="container">
         <?php include_once("../conexiones/obtenerPerfil.php");?>
-        <h5>Nombre:</h5>
-  
-        <h5>Apellidos:</h5>
-        
-        <h5>DNI:</h5>
-
-        <h5>Email:</h5>
-
-        <h5>Fecha Nacimiento:</h5>
-
-        <h5>Dirección:</h5>
+        <form action="../conexiones/updateUser.php" method="POST">
+          <h5>Nombre:</h5>
+          <input type="text" placeholder="<?php echo $nombrePerfil;?>" id="nombre" name="nombre"> <br>
+          <h5>Apellidos:</h5>
+          <input type="text" placeholder="<?php echo $nombreApellidos;?>" id="apellidos" name="apellidos"><br>
+          <h5>DNI:</h5>
+          <input type="text" placeholder="<?php echo $nombreDni;?>" id="dni" name="dni"><br>
+          <h5>Email:</h5>
+          <input type="text" placeholder="<?php echo $nombreEmail;?>" id="email" name="email"><br>
+          <h5>Fecha Nacimiento:</h5>
+          <input type="text" placeholder="<?php echo $nombreFnac;?>" id="f_nacimiento" name="f_nacimiento"><br>
+          <h5>Pais:</h5>
+          <input type="text" placeholder="<?php echo $nombrePais;?>" id="pais" name="pais"><br>
+          <h5>Código postal:</h5>
+          <input type="text" placeholder="<?php echo $nombreCod;?>" id="cod_postal" name="cod_postal"><br>
+          <h5>Provincia:</h5>
+          <input type="text" placeholder="<?php echo $nombreProv;?>" id="provincia" name="provincia"><br>
+          <h5>Ciudad:</h5>
+          <input type="text" placeholder="<?php echo $nombreCiudad;?>" id="ciudad" name="ciudad"><br>
+          <h5>Dirección:</h5>
+          <input type="text" placeholder="<?php echo $nombreDir;?>" id="direccion" name="direccion"><br>
+          <button type="submit" name="Enviar">Actualizar datos</button><br>
+        </form>
       </div>
     </section>
   </main>
