@@ -54,7 +54,8 @@
   <main>
     <section class="mostrarPerfil" id="mostrarPerfil">
       <div class="container">
-        <a class="button" id="pincel1"><img src="../../img/pincel.png"></a>
+      <div class="recuadro">
+        <a class="button pincel" id="pincel1"><img src="../../img/pincel.png"></a>
         <?php include_once("../conexiones/obtenerPerfil.php");?>
         <h5>Nombre:</h5>
         <p><?php echo $nombrePerfil;?></p>
@@ -76,11 +77,13 @@
         <p><?php echo $nombreCiudad;?></p>
         <h5>Dirección:</h5>
         <p><?php echo $nombreDir;?></p>
+        </div>
       </div>
     </section>
     <section class="editarPerfil active" id="editarPerfil">
       <div class="container">
-        <a class="button" id="pincel2"><img src="../../img/pincel.png"></a>
+        <div class="recuadro">
+        <a class="button pincel" id="pincel2"><img src="../../img/pincel.png"></a>
         <?php include_once("../conexiones/obtenerPerfil.php");?>
         <form action="../conexiones/updateUser.php" method="POST">
           <h5>Nombre:</h5>
@@ -103,8 +106,9 @@
           <input type="text" placeholder="<?php echo $nombreCiudad;?>" id="ciudad" name="ciudad"><br>
           <h5>Dirección:</h5>
           <input type="text" placeholder="<?php echo $nombreDir;?>" id="direccion" name="direccion"><br>
-          <button type="submit" name="Enviar">Actualizar datos</button><br>
+          <button id="boton" type="submit" name="Enviar">Actualizar datos</button><br>
         </form>
+        </div>
       </div>
     </section>
   </main>

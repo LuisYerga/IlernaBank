@@ -1,16 +1,43 @@
-.principal{
+section{
   background-color: $color-fondo;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .container{
+  display: flex;
+  justify-content: center;
   padding-top: 3vh;
   text-align: center;
+}
+
+.recuadro{
+  width: 80vw;
+  background-color: $contraste-blanco;
+  color: $contraste-negro;
+  border-radius: 1%;
+}
+
+#boton{
+  margin-top: 5%;
+  margin-bottom: 20px;
+  background-color: $color-fondo;
   color: $contraste-blanco;
 }
-  
-section{
-    background-color: $color-fondo;
+
+.pincel{
+  position: absolute;
+  margin-left: 23vw;
 }
+
+
+@media only screen and (min-width: 1024px) {
+  .recuadro{
+    width: 50vw;
+  }
+  #boton{
+    margin-top: 3%;
+  }
+  .pincel{
+    margin-left: 18vw;
+  }
+}
+

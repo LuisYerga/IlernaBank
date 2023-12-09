@@ -8,3 +8,15 @@
     
 }
 
+.principal{
+    background-color: $color-fondo;
+    color: $contraste-blanco;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    padding-top: 3vh;
+    text-align: center;
+}
