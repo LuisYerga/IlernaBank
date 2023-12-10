@@ -7,9 +7,45 @@ if(isset($_POST['retirar'], $_POST['concepto'])){
     $retirar=$_POST['retirar'];
     $concepto=$_POST['concepto'];
 
-    session_start();
-    $iban = $_SESSION['iban'];
+    if($nomreSaldo-$retirar>=0){
+        $nuevoSaldo= $nomreSaldo-$retirar;
 
-    $nomre
+        $updateSaldo= "UPDATE perfil SET saldo='$nuevoSaldo'";
+        $result=$conexion->query($updateSaldo);
 
+        $insertOperaciones= "INSERT INTO operaciones(fecha,cantidad,descripcion,id_realizador)
+        VALUES ('2023-12-10', '$retirar', '$concepto', '$iban')";
+        $result=$conexion->query($insertOperaciones);
+
+        $id_operacion = $conexion->insert_id; //Sacamos el id autogenerado
+
+        $insertGestion="INSERT INTO gestion(id_operacion_gestion, id_realizador_gestion, fecha_gestion, cantidad_gestion, tipo
+        VALUES ('$id_operacion','$iban','2023-12-10','$retirar','$concepto')";
+        $result=$conexion->query($insertGestion);
+
+    }else{
+        header("Location: ../paginas/retirar.php");
+    }
+}else if(isset($_POST['ingresar'], $_POST['concepto'])){
+    $ingresar=$_POST['ingresar'];
+    $concepto=$_POST['concepto'];
+
+    if($ingresar>0){
+        $nuevoSaldo= $nombreSaldo+$ingresar;
+
+        $updateSaldo= "UPDATE perfil SET saldo='$nuevoSaldo'";
+        $result=$conexion->query($updateSaldo);
+
+        $insertOperaciones= "INSERT INTO operaciones(fecha,cantidad,descripcion,id_realizador)
+        VALUES ('2023-12-10', '$ingresar', '$concepto', '$iban')";
+        $result=$conexion->query($insertOperaciones);
+
+        $id_operacion = $conexion->insert_id; //Sacamos el id autogenerado
+
+        $insertGestion="INSERT INTO gestion(id_operacion_gestion, id_realizador_gestion, fecha_gestion, cantidad_gestion, tipo)
+        VALUES ('$id_operacion','$iban','2023-12-10','$ingresar','$concepto')";
+        $result=$conexion->query($insertGestion);
+    }else{
+        header("Location: ../paginas/ingresar.php");
+    }
 }

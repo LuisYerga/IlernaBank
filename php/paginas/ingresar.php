@@ -9,7 +9,6 @@
     <link href="../../css/headers.css" rel="stylesheet">
     <link href="../../css/desplegable.css" rel="stylesheet">
     <link href="../../css/styleTarjetas.css" rel="stylesheet">
-    <link href="../../css/cambioTarjeta.css" rel="stylesheet">
 
     <!--JS-->
     <script defer src="../../js/menu.js"></script>
