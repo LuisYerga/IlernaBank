@@ -7,21 +7,30 @@ if(isset($_POST['retirar'], $_POST['concepto'])){
     $retirar=$_POST['retirar'];
     $concepto=$_POST['concepto'];
 
-    if($nomreSaldo-$retirar>=0){
-        $nuevoSaldo= $nomreSaldo-$retirar;
+    if($nombreSaldo-$retirar>=0){
+        $nuevoSaldo= $nombreSaldo-$retirar;
 
         $updateSaldo= "UPDATE perfil SET saldo='$nuevoSaldo'";
         $result=$conexion->query($updateSaldo);
-
+        
         $insertOperaciones= "INSERT INTO operaciones(fecha,cantidad,descripcion,id_realizador)
         VALUES ('2023-12-10', '$retirar', '$concepto', '$iban')";
         $result=$conexion->query($insertOperaciones);
 
         $id_operacion = $conexion->insert_id; //Sacamos el id autogenerado
 
-        $insertGestion="INSERT INTO gestion(id_operacion_gestion, id_realizador_gestion, fecha_gestion, cantidad_gestion, tipo
+        $insertGestion="INSERT INTO gestion(id_operacion_gestion, id_realizador_gestion, fecha_gestion, cantidad_gestion, tipo)
         VALUES ('$id_operacion','$iban','2023-12-10','$retirar','$concepto')";
         $result=$conexion->query($insertGestion);
+
+        if($result){
+            header("Location: ../paginas/pantallaConfirmacion.php");
+            exit();
+        }else{
+            $paginaOrigen= "../retirar.php";
+            header("Location: ../paginas/pantallaFallo.php");
+            exit();
+        }
 
     }else{
         header("Location: ../paginas/retirar.php");
@@ -45,6 +54,16 @@ if(isset($_POST['retirar'], $_POST['concepto'])){
         $insertGestion="INSERT INTO gestion(id_operacion_gestion, id_realizador_gestion, fecha_gestion, cantidad_gestion, tipo)
         VALUES ('$id_operacion','$iban','2023-12-10','$ingresar','$concepto')";
         $result=$conexion->query($insertGestion);
+
+        if($result){
+           header("Location: ../paginas/pantallaConfirmacion.php");
+           exit();
+        }else{
+            $paginaOrigen= "../ingresar.php";
+            header("Location: ../paginas/pantallaFallo.php");
+            exit();
+        }
+
     }else{
         header("Location: ../paginas/ingresar.php");
     }

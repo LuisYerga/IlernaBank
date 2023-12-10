@@ -15,6 +15,7 @@
 
     <!--PHP-->
     <?php include_once("../conexiones/obtenerPerfil.php");?>
+    <?php include_once("../conexiones/updateSaldo.php");?>
 </head>
 <body>
   <header>
@@ -58,16 +59,9 @@
     <section class="mostrarPerfil" id="mostrarPerfil">
       <div class="container">
       <div class="recuadro">
-        <h3>Ingresar Dinero</h3>
-        <h4>Dinero actual:</h4>
-        <p><?php echo $nombreSaldo;?></p>
-        <form action="../conexiones/updateSaldo.php" method="POST"> 
-          <h4>Cantidad a ingresar</h4> <br>
-          <input type="float" placeholder="Introduzca una cantidad" id="ingresar" name="ingresar"> <br>
-          <h4>Concepto</h4> <br>
-          <input type="text" placeholder="Ingresar dinero" id="concepto" name="concepto"> <br>
-          <button id="boton" type="submit" name="Enviar">Realizar operación</button><br>
-        </form>
+        <h2>Algo salio mal...</h2>
+        <a class="button option" id="boton" href="<?php echo $paginaOrigen ?>">Volver a intentar</a> 
+        <a class="button option" id="boton" href="inicioUser.php">Volver al inicio</a> 
       </div>
       </div>
     </section>
