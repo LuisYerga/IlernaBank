@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In</title>
+    <title>Perfil</title>
+    <!--CSS-->
     <link href="../../css/bootstrap.css" rel="stylesheet">
     <link href="../../css/headers.css" rel="stylesheet">
     <link href="../../css/desplegable.css" rel="stylesheet">
+    <link href="../../css/styleTarjetas.css" rel="stylesheet">
+    <link href="../../css/cambioTarjeta.css" rel="stylesheet">
+    <!--JS-->
     <script defer src="../../js/menu.js"></script>
-</head>
+    <!--PHP-->
+    <?php include_once("../conexiones/obtenerPerfil.php");?>
 
+</head>
 <body>
   <header>
     <div class="headerPaginas">
@@ -20,6 +26,7 @@
         <h1>Esteban&Co</h1>
       </div>
       <div class="iconosMenu">
+        <a class="button" href="inicioUser.php" id="volver"><img src="../../img/salir.png"></a>
         <a class="button" href="" id="correo"><img src="../../img/correo.png"></a>
         <a class="button" id="menu"><img src="../../img/usu.png"></a>
       </div>
@@ -48,27 +55,22 @@
     </div>
   </aside>
   <main>
-      <section class="principal">
-          <div class="container">
-          <?php include_once("../conexiones/obtenerPerfil.php");?>
-              <h3>Bienvenido de vuelta <?php echo $nombrePerfil;?></h3>
-              <img src="../../img/credito.png">
-              <h5>Tu saldo</h5>
-              <h3>1000000</h3>
-              <h5>Últimos movimientos</h5>
-              <h5>Realizar operación</h5>
-              <a class="button gestion retirar" name="Retirar" href="retirar.php">Retirar dinero</a>
-              <a class="button gestion ingresar" name="Ingresar" href="ingresar.php">Ingresar dinero</a>
-          </div>
-      </section>
-  </main>
-
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
-  </script>
+    <section class="mostrarPerfil" id="mostrarPerfil">
+      <div class="container">
+      <div class="recuadro">
+        <h3>Retirar Dinero</h3>
+        <h4>Dinero actual:</h4>
+        <p><?php echo $nombreSaldo;?></p>
+        <form action="../conexiones/updateSaldo.php" method="POST"> 
+          <h4>Cantidad a retirar</h4> <br>
+          <input type="float" placeholder="Introduzca una cantidad" id="retirar" name="retirar"> <br>
+          <h4>Concepto</h4> <br>
+          <input type="text" placeholder="Retirada dinero" id="concepto" name="concepto"> <br>
+          <button id="boton" type="submit" name="Enviar">Realizar operación</button><br>
+        </form>
+      </div>
+      </div>
+    </section>
+   </main>
 </body>
 </html>

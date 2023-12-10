@@ -104,4 +104,16 @@ if(isset($_SESSION['iban'])){
     } else {
         echo "No se encontró el nombre del perfil.";
     }
+
+    $consultaSaldo= "SELECT saldo FROM perfil WHERE iban='$iban'";
+    $resultSaldo = $conexion->query($consultaSaldo);
+
+    if($resultSaldo->num_rows > 0) {
+        $row = $resultSaldo->fetch_assoc(); 
+        $nombreSaldo = $row['saldo']; 
+    } else {
+        echo "No se encontró el nombre del perfil.";
+    }
+
+
 }

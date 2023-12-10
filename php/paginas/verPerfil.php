@@ -32,7 +32,7 @@
   <aside class="aside" id="aside">
     <div class="head">
       <div id="Perfil" class="opciones">
-        <a class="button option" id="perfil" href=""><img src="../../img/usuario.png"><p>Mi perfil</p></a>
+        <a class="button option" id="perfil" href="verPerfil.php"><img src="../../img/usuario.png"><p>Mi perfil</p></a>
       </div>
       <div id="Buzon" class="opciones">
         <a class="button option" id="buzon" href=""><img src="../../img/correo2.png"><p>Buzón</p></a>
@@ -41,10 +41,10 @@
         <a class="button option" id="prestamos" href=""><img src="../../img/usuario.png"><p>Prestamos</p></a>
       </div>
       <div id="Retirar" class="opciones">
-        <a class="button option" id="retirar" href=""><img src="../../img/usuario.png"><p>Retirar dinero</p></a>
+        <a class="button option" id="retirar" href="retirar.php"><img src="../../img/usuario.png"><p>Retirar dinero</p></a>
       </div>
       <div id="Ingresar" class="opciones">
-        <a class="button option" id="ingresar" href=""><img src="../../img/usuario.png"><p>Ingresar dinero</p></a>
+        <a class="button option" id="ingresar" href="ingresar.php"><img src="../../img/usuario.png"><p>Ingresar dinero</p></a>
       </div>
       <div id="Ingresar" class="opciones">
         <a class="button option salida" id="salir"href="login.php"><img src="../../img/flecha.png"><p>Cerrar sesión</p></a>
