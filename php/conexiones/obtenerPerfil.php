@@ -115,5 +115,8 @@ if(isset($_SESSION['iban'])){
         echo "No se encontró el nombre del perfil.";
     }
 
+    $consultaMovimientos= "SELECT descripcion, cantidad, fecha FROM operaciones WHERE id_realizador='$iban' ORDER BY fecha DESC LIMIT 5 ";
+    $resultMovimientos= $conexion->query($consultaMovimientos);
+    
 
 }

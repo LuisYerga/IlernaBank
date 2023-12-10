@@ -54,8 +54,20 @@
               <h3>Bienvenido de vuelta <?php echo $nombrePerfil;?></h3>
               <img src="../../img/credito.png">
               <h5>Tu saldo</h5>
-              <h3>1000000</h3>
+              <h3><?php echo $nombreSaldo;?></h3>
               <h5>Últimos movimientos</h5>
+              <?php 
+                if($resultMovimientos->num_rows == 0) {
+                  echo "<p>No hay últimos movimientos</p>";
+                }else{
+                  while($fila=$resultMovimientos->fetch_assoc()){
+                    echo '<p>Descripción: ' . $fila['descripcion'] . '</p>';
+                    echo '<p>Cantidad: ' . $fila['cantidad'] . '</p>';
+                    echo '<p>Fecha: ' . $fila['fecha'] . '</p>';
+                    echo '<hr>'; 
+                  }
+                }
+              ?>
               <h5>Realizar operación</h5>
               <a class="button gestion retirar" name="Retirar" href="retirar.php">Retirar dinero</a>
               <a class="button gestion ingresar" name="Ingresar" href="ingresar.php">Ingresar dinero</a>
