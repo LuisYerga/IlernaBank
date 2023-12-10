@@ -10,7 +10,7 @@ if(isset($_POST['retirar'], $_POST['concepto'])){
     if($nombreSaldo-$retirar>=0){
         $nuevoSaldo= $nombreSaldo-$retirar;
 
-        $updateSaldo= "UPDATE perfil SET saldo='$nuevoSaldo'";
+        $updateSaldo= "UPDATE perfil SET saldo='$nuevoSaldo' WHERE iban='$iban'";
         $result=$conexion->query($updateSaldo);
         
         $insertOperaciones= "INSERT INTO operaciones(fecha,cantidad,descripcion,id_realizador)
@@ -42,7 +42,7 @@ if(isset($_POST['retirar'], $_POST['concepto'])){
     if($ingresar>0){
         $nuevoSaldo= $nombreSaldo+$ingresar;
 
-        $updateSaldo= "UPDATE perfil SET saldo='$nuevoSaldo'";
+        $updateSaldo= "UPDATE perfil SET saldo='$nuevoSaldo' WHERE iban='$iban'";
         $result=$conexion->query($updateSaldo);
 
         $insertOperaciones= "INSERT INTO operaciones(fecha,cantidad,descripcion,id_realizador)
