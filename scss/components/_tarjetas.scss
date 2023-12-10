@@ -10,6 +10,8 @@ section{
 }
 
 .recuadro{
+  position: relative;
+  padding-top: 10px;
   width: 80vw;
   background-color: $contraste-blanco;
   color: $contraste-negro;
@@ -23,9 +25,11 @@ section{
   color: $contraste-blanco;
 }
 
-.pincel{
+.pincel {
   position: absolute;
-  margin-left: 23vw;
+  top: 0;
+  right: 0;
+  padding: 10px;
 }
 
 
@@ -35,9 +39,6 @@ section{
   }
   #boton{
     margin-top: 3%;
-  }
-  .pincel{
-    margin-left: 18vw;
   }
 }
 
