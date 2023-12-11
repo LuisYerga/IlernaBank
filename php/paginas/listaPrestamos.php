@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil</title>
+    <title>Prestamos</title>
     <!--CSS-->
     <link href="../../css/bootstrap.css" rel="stylesheet">
     <link href="../../css/headers.css" rel="stylesheet">
@@ -56,11 +56,26 @@
   </aside>
   <main>
     <section class="mostrarPerfil" id="mostrarPerfil">
-      <div class="container">
-      <div class="recuadro">
-        <h2>¡Su operación se ha sido un exito!</h2>
-        <a class="button option" id="boton" href="inicioUser.php">Volver al inicio</a> 
+      <div class="nuevoPrestamo">
+      <a class="button option" id="solicitar" href="solicitarPrestamos.php"><img src="../../img/mas.png"><p>Solicitar prestamo</p></a>
       </div>
+      <div class="listado">
+      <?php 
+        if($resultPrestamos->num_rows == 0) {
+          echo "<p>No hay historial de prestamos</p>";
+        }else{
+          while($fila=$resultPrestamos->fetch_assoc()){
+            echo '<p>Descripción: ' . $fila['nombre_prestamo'] . '</p>';
+            echo '<span class="separador"></span>';
+            echo '<p>Cantidad: ' . $fila['cantidad_prestamo'] . '</p>';
+            echo '<span class="separador"></span>';
+            echo '<p>Fecha: ' . $fila['estado'] . '</p>';            
+            echo '<span class="separador"></span>';
+            echo '<p>Fecha: ' . $fila['final_prestamo'] . '</p>';
+            echo '<hr>'; 
+          }
+        }
+        ?>
       </div>
     </section>
    </main>

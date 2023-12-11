@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil</title>
+    <title>Solicitar Prestamos</title>
     <!--CSS-->
     <link href="../../css/bootstrap.css" rel="stylesheet">
     <link href="../../css/headers.css" rel="stylesheet">
@@ -26,7 +26,7 @@
         <h1>Esteban&Co</h1>
       </div>
       <div class="iconosMenu">
-        <a class="button" href="inicioUser.php" id="volver"><img src="../../img/salir.png"></a>
+        <a class="button" href="listaPrestamos.php" id="volver"><img src="../../img/salir.png"></a>
         <a class="button" href="" id="correo"><img src="../../img/correo.png"></a>
         <a class="button" id="menu"><img src="../../img/usu.png"></a>
       </div>
@@ -55,14 +55,32 @@
     </div>
   </aside>
   <main>
-    <section class="mostrarPerfil" id="mostrarPerfil">
+  <section class="solicitarPrestamo" id="solicitarPrestamo">
       <div class="container">
-      <div class="recuadro">
-        <h2>¡Su operación se ha sido un exito!</h2>
-        <a class="button option" id="boton" href="inicioUser.php">Volver al inicio</a> 
-      </div>
+        <div class="recuadro">
+            <?php
+            if($resultActivo->num_rows > 0) {
+              echo "<h3>¡Ya tienes una solicitud activa!</h3>";
+              ?>
+              <a class="button option" id="boton" href="listaPrestamos.php">Volver a la lista</a> 
+            <?php
+            }else{?>
+                <h3>Pedir Préstamos</h3> <br>
+                <form action="../conexiones/insertPrestamos.php" method="POST"> 
+                <h4>Nombre prestamo</h4> 
+                <input type="text"  id="nombre_prestamo" name="nombre_prestamo" required> <br>
+                <h4>Motivo prestamo</h4> 
+                <input type="text"  id="motivo_prestamo" name="motivo_prestamo" required> <br>
+                <h4>Cantidad</h4> 
+                <input type="float" id="cantidad_prestamo" name="cantidad_prestamo" required> <br>
+                <button id="boton" type="submit" name="Enviar">Realizar operación</button><br>
+                </form>
+            <?php
+            }
+            ?>
+        </div>
       </div>
     </section>
-   </main>
+  </main>
 </body>
 </html>

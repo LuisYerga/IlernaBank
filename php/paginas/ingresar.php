@@ -41,7 +41,7 @@
         <a class="button option" id="buzon" href=""><img src="../../img/correo2.png"><p>Buzón</p></a>
       </div>
       <div id="Prestamos" class="opciones">
-        <a class="button option" id="prestamos" href=""><img src="../../img/usuario.png"><p>Prestamos</p></a>
+        <a class="button option" id="prestamos" href="listaPrestamos.php"><img src="../../img/usuario.png"><p>Prestamos</p></a>
       </div>
       <div id="Retirar" class="opciones">
         <a class="button option" id="retirar" href="retirar.php"><img src="../../img/usuario.png"><p>Retirar dinero</p></a>
@@ -55,16 +55,16 @@
     </div>
   </aside>
   <main>
-    <section class="mostrarPerfil" id="mostrarPerfil">
+    <section class="ingresarDinero" id="ingresarDinero">
       <div class="container">
       <div class="recuadro">
-        <h3>Ingresar Dinero</h3>
+        <h3>Ingresar Dinero</h3> <br>
         <h4>Dinero actual:</h4>
         <p><?php echo $nombreSaldo;?></p>
         <form action="../conexiones/updateSaldo.php" method="POST"> 
-          <h4>Cantidad a ingresar</h4> <br>
+          <h4>Cantidad a ingresar</h4> 
           <input type="float" placeholder="Introduzca una cantidad" id="ingresar" name="ingresar"> <br>
-          <h4>Concepto</h4> <br>
+          <h4>Concepto</h4> 
           <input type="text" placeholder="Ingresar dinero" id="concepto" name="concepto"> <br>
           <button id="boton" type="submit" name="Enviar">Realizar operación</button><br>
         </form>

@@ -118,5 +118,9 @@ if(isset($_SESSION['iban'])){
     $consultaMovimientos= "SELECT descripcion, cantidad, fecha FROM operaciones WHERE id_realizador='$iban' ORDER BY fecha DESC LIMIT 5 ";
     $resultMovimientos= $conexion->query($consultaMovimientos);
     
+    $consultaPrestamos="SELECT nombre_prestamo, cantidad_prestamo, estado, final_prestamo FROM prestamos WHERE id_solicitante='$iban' ORDER BY id_prestamos ASC";
+    $resultPrestamos= $conexion->query($consultaPrestamos);
 
+    $comprobacionActivo= "SELECT nombre_prestamo FROM prestamos WHERE id_solicitante='$iban' AND solicitud_activa=true ";
+    $resultActivo= $conexion->query($comprobacionActivo);
 }

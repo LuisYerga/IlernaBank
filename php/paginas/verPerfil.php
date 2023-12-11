@@ -38,7 +38,7 @@
         <a class="button option" id="buzon" href=""><img src="../../img/correo2.png"><p>Buzón</p></a>
       </div>
       <div id="Prestamos" class="opciones">
-        <a class="button option" id="prestamos" href=""><img src="../../img/usuario.png"><p>Prestamos</p></a>
+        <a class="button option" id="prestamos" href="listaPrestamos.php"><img src="../../img/usuario.png"><p>Prestamos</p></a>
       </div>
       <div id="Retirar" class="opciones">
         <a class="button option" id="retirar" href="retirar.php"><img src="../../img/usuario.png"><p>Retirar dinero</p></a>

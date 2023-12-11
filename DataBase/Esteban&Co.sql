@@ -50,7 +50,7 @@ motivo_prestamo varchar(40),
 cantidad_prestamo float,
 solicitud_activa boolean,
 final_prestamo date,
-estado boolean,
+estado enum('pendiente','aprobada', 'rechazada'),
 id_solicitante varchar(50),
 foreign key (id_solicitante) references perfil(iban)
 );

@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
+    <!--CSS-->
     <link href="../../css/bootstrap.css" rel="stylesheet">
     <link href="../../css/headers.css" rel="stylesheet">
     <link href="../../css/desplegable.css" rel="stylesheet">
+
+    <!--JS-->
     <script defer src="../../js/menu.js"></script>
+
+    <!--PHP-->
+    <?php include_once("../conexiones/obtenerPerfil.php");?>
 </head>
 
 <body>
@@ -34,7 +40,7 @@
         <a class="button option" id="buzon" href=""><img src="../../img/correo2.png"><p>Buzón</p></a>
       </div>
       <div id="Prestamos" class="opciones">
-        <a class="button option" id="prestamos" href=""><img src="../../img/usuario.png"><p>Prestamos</p></a>
+        <a class="button option" id="prestamos" href="listaPrestamos.php"><img src="../../img/usuario.png"><p>Prestamos</p></a>
       </div>
       <div id="Retirar" class="opciones">
         <a class="button option" id="retirar" href="retirar.php"><img src="../../img/usuario.png"><p>Retirar dinero</p></a>
@@ -50,7 +56,6 @@
   <main>
       <section class="principal">
           <div class="container">
-          <?php include_once("../conexiones/obtenerPerfil.php");?>
               <h3>Bienvenido de vuelta <?php echo $nombrePerfil;?></h3>
               <img src="../../img/credito.png">
               <h5>Tu saldo</h5>
