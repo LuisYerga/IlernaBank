@@ -27,7 +27,7 @@
       </div>
       <div class="iconosMenu">
         <a class="button" href="inicioUser.php" id="volver"><img src="../../img/salir.png"></a>
-        <a class="button" href="" id="correo"><img src="../../img/correo.png"></a>
+        <a class="button" href="contactos.php" id="correo"><img src="../../img/correo.png"></a>
         <a class="button" id="menu"><img src="../../img/usu.png"></a>
       </div>
     </div>
@@ -38,7 +38,7 @@
         <a class="button option" id="perfil" href="verPerfil.php"><img src="../../img/usuario.png"><p>Mi perfil</p></a>
       </div>
       <div id="Buzon" class="opciones">
-        <a class="button option" id="buzon" href=""><img src="../../img/correo2.png"><p>Buzón</p></a>
+        <a class="button option" id="buzon" href="contactos.php"><img src="../../img/correo2.png"><p>Buzón</p></a>
       </div>
       <div id="Prestamos" class="opciones">
         <a class="button option" id="prestamos" href="listaPrestamos.php"><img src="../../img/usuario.png"><p>Prestamos</p></a>
@@ -55,9 +55,9 @@
     </div>
   </aside>
   <main>
-    <section class="mostrarPerfil" id="mostrarPerfil">
-      <div class="nuevoPrestamo">
-      <a class="button option" id="solicitar" href="solicitarPrestamos.php"><img src="../../img/mas.png"><p>Solicitar prestamo</p></a>
+    <section class="listaPrestamos" id="listaPrestamos">
+      <div class="nuevo" id="nuevoPrestamo">
+        <a class="button option" id="solicitar" href="solicitarPrestamos.php"><img src="../../img/mas.png"><p>Solicitar prestamo</p></a>
       </div>
       <div class="listado">
       <?php 

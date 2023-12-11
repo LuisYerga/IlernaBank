@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil</title>
+    <title>Fallo</title>
     <!--CSS-->
     <link href="../../css/bootstrap.css" rel="stylesheet">
     <link href="../../css/headers.css" rel="stylesheet">
@@ -29,7 +29,7 @@
       </div>
       <div class="iconosMenu">
         <a class="button" href="inicioUser.php" id="volver"><img src="../../img/salir.png"></a>
-        <a class="button" href="" id="correo"><img src="../../img/correo.png"></a>
+        <a class="button" href="contactos.php" id="correo"><img src="../../img/correo.png"></a>
         <a class="button" id="menu"><img src="../../img/usu.png"></a>
       </div>
     </div>
@@ -40,7 +40,7 @@
         <a class="button option" id="perfil" href="verPerfil.php"><img src="../../img/usuario.png"><p>Mi perfil</p></a>
       </div>
       <div id="Buzon" class="opciones">
-        <a class="button option" id="buzon" href=""><img src="../../img/correo2.png"><p>Buzón</p></a>
+        <a class="button option" id="buzon" href="contactos.php"><img src="../../img/correo2.png"><p>Buzón</p></a>
       </div>
       <div id="Prestamos" class="opciones">
         <a class="button option" id="prestamos" href="listaPrestamos.php"><img src="../../img/usuario.png"><p>Prestamos</p></a>

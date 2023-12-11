@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>Perfil</title>
     <!--CSS-->
     <link href="../../css/bootstrap.css" rel="stylesheet">
     <link href="../../css/headers.css" rel="stylesheet">
     <link href="../../css/desplegable.css" rel="stylesheet">
+    <link href="../../css/styleTarjetas.css" rel="stylesheet">
 
     <!--JS-->
     <script defer src="../../js/menu.js"></script>
-    <script defer src="../../js/fecha.js"></script>
     <script defer src="../../js/eliminarFecha.js"></script>
 
     <!--PHP-->
     <?php include_once("../conexiones/obtenerPerfil.php");?>
 </head>
-
 <body>
   <header>
     <div class="headerPaginas">
@@ -28,6 +27,7 @@
         <h1>Esteban&Co</h1>
       </div>
       <div class="iconosMenu">
+        <a class="button" href="inicioUser.php" id="volver"><img src="../../img/salir.png"></a>
         <a class="button" href="contactos.php" id="correo"><img src="../../img/correo.png"></a>
         <a class="button" id="menu"><img src="../../img/usu.png"></a>
       </div>
@@ -55,41 +55,16 @@
       </div>
     </div>
   </aside>
-  <main>
-      <section class="principal">
-          <div class="container">
-              <h3>Bienvenido de vuelta <?php echo $nombrePerfil;?></h3>
-              <img src="../../img/credito.png">
-              <h4>Iniciaste sesión en:</h4>
-              <h5 id="fecha_actual"></h5>
-              <h5>Tu saldo</h5>
-              <h3><?php echo $nombreSaldo;?></h3>
-              <h5>Últimos movimientos</h5>
-              <?php 
-                if($resultMovimientos->num_rows == 0) {
-                  echo "<p>No hay últimos movimientos</p>";
-                }else{
-                  while($fila=$resultMovimientos->fetch_assoc()){
-                    echo '<p>Descripción: ' . $fila['descripcion'] . '</p>';
-                    echo '<p>Cantidad: ' . $fila['cantidad'] . '</p>';
-                    echo '<p>Fecha: ' . $fila['fecha'] . '</p>';
-                    echo '<hr>'; 
-                  }
-                }
-              ?>
-              <h5>Realizar operación</h5>
-              <a class="button gestion retirar" name="Retirar" href="retirar.php">Retirar dinero</a>
-              <a class="button gestion ingresar" name="Ingresar" href="ingresar.php">Ingresar dinero</a>
-          </div>
-      </section>
+  <mani>
+    <section class="listaContactos">
+        <div class="nuevo" id="nuevoContacto">
+            <a class="button option" id="agregar" href="agregarContacto.php"><img src="../../img/mas.png"><p>Agregar Contacto</p></a>
+        </div>
+        <div class="listado">
+
+        </div>
+    </section>
+  </mani>
   </main>
-
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
-  </script>
 </body>
 </html>
