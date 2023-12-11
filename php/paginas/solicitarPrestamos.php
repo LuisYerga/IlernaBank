@@ -12,6 +12,7 @@
 
     <!--JS-->
     <script defer src="../../js/menu.js"></script>
+    <script defer src="../../js/eliminarFecha.js"></script>
 
     <!--PHP-->
     <?php include_once("../conexiones/obtenerPerfil.php");?>
@@ -61,6 +62,11 @@
             <?php
             if($resultActivo->num_rows > 0) {
               echo "<h3>¡Ya tienes una solicitud activa!</h3>";
+              ?>
+              <a class="button option" id="boton" href="listaPrestamos.php">Volver a la lista</a> 
+            <?php
+            }else if($edad->y < 18 || $edad->y ==18 && $edad->m < 0 && $edad->d < 0){
+              echo "<h3>¡Aún eres menor de 18!</h3>";
               ?>
               <a class="button option" id="boton" href="listaPrestamos.php">Volver a la lista</a> 
             <?php

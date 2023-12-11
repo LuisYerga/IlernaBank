@@ -123,4 +123,15 @@ if(isset($_SESSION['iban'])){
 
     $comprobacionActivo= "SELECT nombre_prestamo FROM prestamos WHERE id_solicitante='$iban' AND solicitud_activa=true ";
     $resultActivo= $conexion->query($comprobacionActivo);
+
+
+    $fechaActual = date('Y-m-d');
+
+    $fechaInicio= new DateTime($fechaActual);
+    $fechaNac= new DateTime($nombreFnac);
+
+    $edad= $fechaInicio->diff($fechaNac);
+
+    
+
 }

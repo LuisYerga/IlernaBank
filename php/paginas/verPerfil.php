@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
+    <!--CSS-->
     <link href="../../css/bootstrap.css" rel="stylesheet">
     <link href="../../css/headers.css" rel="stylesheet">
     <link href="../../css/desplegable.css" rel="stylesheet">
     <link href="../../css/styleTarjetas.css" rel="stylesheet">
     <link href="../../css/cambioTarjeta.css" rel="stylesheet">
-    <!-- Bootstrap CSS v5.2.1 -->
 
+    <!--JS-->
+    <script defer src="../../js/pincel.js"></script>
     <script defer src="../../js/menu.js"></script>
+    <script defer src="../../js/eliminarFecha.js"></script>
+
+    <!--PHP-->
+    <?php include_once("../conexiones/obtenerPerfil.php");?>
 </head>
 <body>
   <header>
@@ -56,7 +62,6 @@
       <div class="container">
       <div class="recuadro">
         <a class="button pincel" id="pincel1"><img src="../../img/pincel.png"></a>
-        <?php include_once("../conexiones/obtenerPerfil.php");?>
         <h5>Nombre:</h5>
         <p><?php echo $nombrePerfil;?></p>
         <h5>Apellidos:</h5>
@@ -84,7 +89,6 @@
       <div class="container">
         <div class="recuadro">
         <a class="button pincel" id="pincel2"><img src="../../img/pincel.png"></a>
-        <?php include_once("../conexiones/obtenerPerfil.php");?>
         <form action="../conexiones/updateUser.php" method="POST">
           <h5>Nombre:</h5>
           <input type="text" placeholder="<?php echo $nombrePerfil;?>" id="nombre" name="nombre"> <br>
