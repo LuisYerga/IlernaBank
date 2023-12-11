@@ -11,6 +11,7 @@
     <link href="../../css/styleTarjetas.css" rel="stylesheet">
     <!--JS-->
     <script defer src="../../js/menu.js"></script>
+    <script defer src="../../js/pincel.js"></script>
     <!--PHP-->
     <?php include_once("../conexiones/obtenerPerfil.php");?>
 

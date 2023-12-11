@@ -58,6 +58,8 @@
           <div class="container">
               <h3>Bienvenido de vuelta <?php echo $nombrePerfil;?></h3>
               <img src="../../img/credito.png">
+              <h4>Iniciaste sesión en:</h4>
+              <h5 id="fecha_actual"></h5>
               <h5>Tu saldo</h5>
               <h3><?php echo $nombreSaldo;?></h3>
               <h5>Últimos movimientos</h5>
