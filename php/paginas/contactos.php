@@ -61,7 +61,16 @@
             <a class="button option" id="agregar" href="agregarContacto.php"><img src="../../img/mas.png"><p>Agregar Contacto</p></a>
         </div>
         <div class="listado">
-
+        <?php 
+          if($resultContactos->num_rows == 0) {
+            echo "<p>No hay contactos agregados</p>";
+          }else{
+            while($fila=$resultContactos->fetch_assoc()){
+              echo $fila['nombre_agregado'] ;
+              echo '<hr>'; 
+            }
+          }
+        ?>
         </div>
     </section>
   </mani>
