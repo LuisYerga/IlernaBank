@@ -16,17 +16,25 @@ if(isset($_POST['nombre_agregado'],$_POST['correo_agregado'])){
         session_start();
         $iban=$_SESSION['iban'];
 
-        $insertContacto="INSERT INTO contacto(nombre_agregado,id_usuario,id_agregado)
-        VALUES ('$nombre_agregado', '$iban', '$ibanAgregado)";
-        $result=$conexion->query($insertContacto);
+        $comprobacionRepetido= "SELECT nombre_agregado from contacto WHERE id_usuario='$iban' AND id_agregado='$ibanAgregado'";
+        $resultRepe= $conexion->query($comprobacionRepetido);
 
-        if($result){
-            header("Location: ../paginas/contactos.php");  
+        if($resultRepe->num_rows == 0) {
+            $insertContacto="INSERT INTO contacto(nombre_agregado,id_usuario,id_agregado)
+            VALUES ('$nombre_agregado', '$iban', '$ibanAgregado')";
+            $result=$conexion->query($insertContacto);
+    
+            if($result){
+                header("Location: ../paginas/contactos.php");  
+            }else{
+                header("Location: ../paginas/pantallaFallo.php");
+            }
         }else{
-            header("Location: ../paginas/pantallaFallo.php");
+            header("Location: ../paginas/agregarContacto.php");
         }
+        
     }else{
-        header("Location: ../paginas/agregarContactos.php");
+        header("Location: ../paginas/agregarContacto.php");
     }
 
 }
