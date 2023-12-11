@@ -64,9 +64,9 @@
         <p><?php echo $nombreSaldo;?></p>
         <form action="../conexiones/updateSaldo.php" method="POST"> 
           <h4>Cantidad a retirar</h4> 
-          <input type="float" placeholder="Introduzca una cantidad" id="retirar" name="retirar"> <br>
+          <input type="float" placeholder="Introduzca una cantidad" id="retirar" name="retirar" required> <br>
           <h4>Concepto</h4> 
-          <input type="text" placeholder="Retirada dinero" id="concepto" name="concepto"> <br>
+          <input type="text" placeholder="Retirada dinero" id="concepto" name="concepto" required> <br>
           <button id="boton" type="submit" name="Enviar">Realizar operación</button><br>
         </form>
       </div>
