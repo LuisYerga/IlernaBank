@@ -118,7 +118,7 @@ if(isset($_SESSION['iban'])){
     $consultaMovimientos= "SELECT descripcion, cantidad, fecha FROM operaciones WHERE id_realizador='$iban' ORDER BY fecha DESC LIMIT 5 ";
     $resultMovimientos= $conexion->query($consultaMovimientos);
     
-    $consultaPrestamos="SELECT nombre_prestamo, cantidad_prestamo, estado, final_prestamo FROM prestamos WHERE id_solicitante='$iban' ORDER BY id_prestamos ASC";
+    $consultaPrestamos="SELECT id_prestamos, nombre_prestamo, cantidad_prestamo,cantidad_porPagar, estado, final_prestamo FROM prestamos WHERE id_solicitante='$iban' ORDER BY id_prestamos ASC";
     $resultPrestamos= $conexion->query($consultaPrestamos);
 
     $comprobacionActivo= "SELECT nombre_prestamo FROM prestamos WHERE id_solicitante='$iban' AND solicitud_activa=true ";
@@ -135,7 +135,15 @@ if(isset($_SESSION['iban'])){
     $consultaContactos= "SELECT id_contacto, nombre_agregado, id_agregado from contacto WHERE id_usuario='$iban' ORDER BY id_contacto DESC";
     $resultContactos= $conexion->query($consultaContactos);
 
+    $id_prestamos=$_SESSION['id_prestamos'];
+    $prestamoPagar="SELECT nombre_prestamo,cantidad_porPagar FROM prestamos WHERE id_solicitante='$iban' AND id_prestamos='$id_prestamos'";
+    $resultPagar= $conexion->query($prestamoPagar);
 
+    if ($resultPagar->num_rows > 0) {
+        $row = $resultPagar->fetch_assoc();
     
-
+        // Asignar los valores a variables individuales
+        $nombrePrestamo = $row['nombre_prestamo'];
+        $cantidadPorPagar = $row['cantidad_porPagar'];
+    }
 }

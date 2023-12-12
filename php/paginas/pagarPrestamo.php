@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prestamos</title>
+    <title>Pagar prestamo</title>
     <!--CSS-->
     <link href="../../css/bootstrap.css" rel="stylesheet">
     <link href="../../css/headers.css" rel="stylesheet">
@@ -13,6 +13,7 @@
     <!--JS-->
     <script defer src="../../js/menu.js"></script>
     <script defer src="../../js/eliminarFecha.js"></script>
+
     <!--PHP-->
     <?php include_once("../conexiones/obtenerPerfil.php");?>
 </head>
@@ -26,7 +27,7 @@
         <h1>Esteban&Co</h1>
       </div>
       <div class="iconosMenu">
-        <a class="button" href="inicioUser.php" id="volver"><img src="../../img/salir.png"></a>
+        <a class="button" href="listaPrestamos.php" id="volver"><img src="../../img/salir.png"></a>
         <a class="button" href="contactos.php" id="correo"><img src="../../img/correo.png"></a>
         <a class="button" id="menu"><img src="../../img/usu.png"></a>
       </div>
@@ -55,36 +56,21 @@
     </div>
   </aside>
   <main>
-    <section class="listaPrestamos" id="listaPrestamos">
-      <div class="nuevo" id="nuevoPrestamo">
-        <a class="button option" id="solicitar" href="solicitarPrestamos.php"><img src="../../img/mas.png"><p>Solicitar prestamo</p></a>
+    <section class="pagarPrestamo" id="pagarPrestamo">
+      <div class="container">
+      <div class="recuadro">
+        <h3>Pagar prestamo <?php $nombrePrestamo?></h3> <br>
+        <h4>Dinero actual:</h4>
+        <p><?php echo $nombreSaldo;?></p>
+        <form action="../conexiones/updatePrestamo.php" method="POST"> 
+          <h4>Cantidad por pagar</h4> 
+          <p><?php echo $cantidadPorPagar ?></p>
+          <input type="hidden" id="cantidadPorPagar" name="cantidadPorPagar" value="<?php echo $cantidadPorPagar ?>" required>
+          <h4>Pago</h4> 
+          <input type="float" placeholder="Ingresar dinero" id="cantidad_pagada" name="cantidad_pagada" required> <br>
+          <button id="boton" type="submit" name="Enviar">Pagar</button><br>
+        </form>
       </div>
-      <div class="listado">
-      <?php 
-        if($resultPrestamos->num_rows == 0) {
-          echo "<p>No hay historial de prestamos</p>";
-        }else{
-          while($fila=$resultPrestamos->fetch_assoc()){
-            echo '<p>Descripción: ' . $fila['nombre_prestamo'] . '</p>';
-            echo '<span class="separador"></span>';
-            echo '<p>Cantidad: ' . $fila['cantidad_prestamo'] . '</p>';
-            echo '<span class="separador"></span>';
-            echo '<p>Fecha: ' . $fila['estado'] . '</p>';            
-            echo '<span class="separador"></span>';
-            echo '<p>Fecha: ' . $fila['final_prestamo'] . '</p>';
-            if(!$fila['estado']=== "pendiente"){ 
-              echo '<p>Por pagar: ' . $fila['cantidad_porPagar'] . '</p>';
-              ?>
-              <form action="../conexiones/gestionPrestamos.php" method="POST">
-                <input type="hidden" name="id_prestamos" value="<?php echo $fila['id_prestamos']; ?>">
-                <button type="submit" name="Pagar prestamo"></button>
-              </form>
-              <?php
-            }
-            echo '<hr>'; 
-          }
-        }
-        ?>
       </div>
     </section>
    </main>
