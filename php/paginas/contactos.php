@@ -68,10 +68,8 @@
             while($fila=$resultContactos->fetch_assoc()){
               ?>
               <form action="../conexiones/gestionMensajes.php" method="POST">
-                <input type="hidden" name="id_contacto" value="<?php echo $fila['id_contacto']; ?>">
-                <input type="hidden" name="nombre_agregado" value="<?php echo $fila['nombre_agregado']; ?>">
                 <input type="hidden" name="id_agregado" value="<?php echo $fila['id_agregado']; ?>">
-                <a class="button" type="submit" name="Enviar"><p><?php echo $fila['nombre_agregado']?></p></a>
+                <button type="submit" name="Enviar"><p><?php echo $fila['nombre_agregado']?></p></button>
               </form>
               <hr>
             <?php

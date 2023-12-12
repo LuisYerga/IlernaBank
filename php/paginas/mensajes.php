@@ -14,7 +14,7 @@
     <script defer src="../../js/eliminarFecha.js"></script>
 
     <!--PHP-->
-    <?php include_once("../conexiones/gestionMensajes.php");?>
+    <?php include("../conexiones/gestionMensajes.php");?>
 
 </head>
 <body>
@@ -27,7 +27,7 @@
         <h1>Esteban&Co</h1>
       </div>
       <div class="iconosMenu">
-        <a class="button" href="inicioUser.php" id="volver"><img src="../../img/salir.png"></a>
+        <a class="button" href="contactos.php" id="volver"><img src="../../img/salir.png"></a>
         <a class="button" href="contactos.php" id="correo"><img src="../../img/correo.png"></a>
         <a class="button" id="menu"><img src="../../img/usu.png"></a>
       </div>
@@ -56,23 +56,29 @@
     </div>
   </aside>
   <main>
+
     <section class="mensajes">
     <?php 
-        if($conversacion->num_rows == 0) {
+    session_start();
+    if(isset($_SESSION['conversacion'])) {
+        $mensajes = $_SESSION['conversacion'];
+
+        if(empty($mensajes)) {
           echo "<p>No hay mensajes aun</p>";
         }else{
-            while($fila=$conversacion->fetch_assoc()){
+            foreach($mensajes as $mensaje){
                 ?>
-                <p id="<?php echo $fila['id_remitente']?>"><?php echo $fila['mensaje']?></p>
+                <p id="<?php echo $mensaje['id_remitente'];?>"><?php echo $mensaje['mensaje'];?></p>
                 <?php
             }
         }
+    }
         ?>
     </section>
     <section class="enviarMensajes">
         <form action="../conexiones/insertMensajes.php" method="POST">
             <input type="text" id="mensajeEnviado" name="mensajeEnviado" required>
-            <a class="button" type="submit" name="Enviar"></a>
+            <button type="submit" name="Enviar"></a>
         </form>
     </section>
   </main>
