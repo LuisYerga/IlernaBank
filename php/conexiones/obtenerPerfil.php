@@ -132,7 +132,7 @@ if(isset($_SESSION['iban'])){
 
     $edad= $fechaInicio->diff($fechaNac);
 
-    $consultaContactos= "SELECT nombre_agregado from contacto WHERE id_usuario='$iban' ORDER BY id_contacto DESC";
+    $consultaContactos= "SELECT id_contacto, nombre_agregado, id_agregado from contacto WHERE id_usuario='$iban' ORDER BY id_contacto DESC";
     $resultContactos= $conexion->query($consultaContactos);
 
 

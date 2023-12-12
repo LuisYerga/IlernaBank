@@ -27,7 +27,7 @@ if(isset($_POST['retirar'], $_POST['concepto'])){
             header("Location: ../paginas/pantallaConfirmacion.php");
             exit();
         }else{
-            $paginaOrigen= "../retirar.php";
+            $paginaOrigen= "retirar.php";
             header("Location: ../paginas/pantallaFallo.php");
             exit();
         }
@@ -54,12 +54,12 @@ if(isset($_POST['retirar'], $_POST['concepto'])){
         $insertGestion="INSERT INTO gestion(id_operacion_gestion, id_realizador_gestion, fecha_gestion, cantidad_gestion, tipo)
         VALUES ('$id_operacion','$iban','2023-12-10','$ingresar','$concepto')";
         $result=$conexion->query($insertGestion);
-
+        
         if($result){
            header("Location: ../paginas/pantallaConfirmacion.php");
            exit();
         }else{
-            $paginaOrigen= "../ingresar.php";
+            $paginaOrigen= "ingresar.php";
             header("Location: ../paginas/pantallaFallo.php");
             exit();
         }

@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactos</title>
+    <title>Mensajes</title>
     <!--CSS-->
     <link href="../../css/bootstrap.css" rel="stylesheet">
     <link href="../../css/headers.css" rel="stylesheet">
     <link href="../../css/desplegable.css" rel="stylesheet">
-    <link href="../../css/styleTarjetas.css" rel="stylesheet">
 
     <!--JS-->
     <script defer src="../../js/menu.js"></script>
     <script defer src="../../js/eliminarFecha.js"></script>
 
     <!--PHP-->
-    <?php include_once("../conexiones/obtenerPerfil.php");?>
+    <?php include_once("../conexiones/gestionMensajes.php");?>
+
 </head>
 <body>
   <header>
@@ -56,29 +56,24 @@
     </div>
   </aside>
   <main>
-    <section class="listaContactos">
-        <div class="nuevo" id="nuevoContacto">
-            <a class="button option" id="agregar" href="agregarContacto.php"><img src="../../img/mas.png"><p>Agregar Contacto</p></a>
-        </div>
-        <div class="listado">
-        <?php 
-          if($resultContactos->num_rows == 0) {
-            echo "<p>No hay contactos agregados</p>";
-          }else{
-            while($fila=$resultContactos->fetch_assoc()){
-              ?>
-              <form action="../conexiones/gestionMensajes.php" method="POST">
-                <input type="hidden" name="id_contacto" value="<?php echo $fila['id_contacto']; ?>">
-                <input type="hidden" name="nombre_agregado" value="<?php echo $fila['nombre_agregado']; ?>">
-                <input type="hidden" name="id_agregado" value="<?php echo $fila['id_agregado']; ?>">
-                <a class="button" type="submit" name="Enviar"><p><?php echo $fila['nombre_agregado']?></p></a>
-              </form>
-              <hr>
-            <?php
+    <section class="mensajes">
+    <?php 
+        if($conversacion->num_rows == 0) {
+          echo "<p>No hay mensajes aun</p>";
+        }else{
+            while($fila=$conversacion->fetch_assoc()){
+                ?>
+                <p id="<?php echo $fila['id_remitente']?>"><?php echo $fila['mensaje']?></p>
+                <?php
             }
-          }
+        }
         ?>
-        </div>
+    </section>
+    <section class="enviarMensajes">
+        <form action="../conexiones/insertMensajes.php" method="POST">
+            <input type="text" id="mensajeEnviado" name="mensajeEnviado" required>
+            <a class="button" type="submit" name="Enviar"></a>
+        </form>
     </section>
   </main>
 </body>
