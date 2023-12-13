@@ -54,21 +54,21 @@
           echo "<p>No hay prestamos pendientes</p>";
         }else{
           while($fila=$resultPrestamosPendiente->fetch_assoc()){
-            echo '<p>Usuario: ' . $fila['pf.email'] . '</p>';
+            echo '<p>Usuario: ' . $fila['email'] . '</p>';
             echo '<span class="separador"></span>';
-            echo '<p>Prestamos: ' . $fila['p.nombre_prestamo'] . '</p>';
+            echo '<p>Prestamos: ' . $fila['nombre_prestamo'] . '</p>';
             echo '<span class="separador"></span>';
-            echo '<p>Motivo: ' . $fila['p.motivo_prestamo'] . '</p>';            
+            echo '<p>Motivo: ' . $fila['motivo_prestamo'] . '</p>';            
             echo '<span class="separador"></span>';
-            echo '<p>Cantidad: ' . $fila['p.cantidad_prestamos'] . '</p>';
+            echo '<p>Cantidad: ' . $fila['cantidad_prestamo'] . '</p>';
             ?>
             <form action="../conexiones/updateAdminPrestamo.php" method="POST">
-                <input type="hidden" name="id_prestamos" value="<?php echo $fila['p.id_prestamos'] ?>">
-                <input type="date" name="fecha_final" required>
+                <input type="hidden" name="id_prestamos" value="<?php echo $fila['id_prestamos'] ?>">
+                <input type="text" name="fecha_final" required>
                 <button type="submit" name="Aprobar"></button>
             </form>
             <form action="../conexiones/updateAdminPrestamo.php" method="POST">
-                <input type="hidden" name="id_prestamos" value="<?php echo $fila['p.id_prestamos'] ?>">
+                <input type="hidden" name="id_prestamos" value="<?php echo $fila['id_prestamos'] ?>">
                 <input type="hidden" name="rechazar" >
                 <button type="submit" name="Rechazar"></button>
             </form>
@@ -86,14 +86,14 @@
           echo "<p>No hay prestamos pendientes</p>";
         }else{
           while($fila=$resultPrestamos->fetch_assoc()){
-            echo '<p>Usuario: ' . $fila['pf.email'] . '</p>';
+            echo '<p>Usuario: ' . $fila['email'] . '</p>';
             echo '<span class="separador"></span>';
-            echo '<p>Prestamos: ' . $fila['p.nombre_prestamo'] . '</p>';
+            echo '<p>Prestamos: ' . $fila['nombre_prestamo'] . '</p>';
             echo '<span class="separador"></span>';
-            echo '<p>Motivo: ' . $fila['p.cantidad_prestamos'] . '</p>';            
+            echo '<p>Cantidad: ' . $fila['cantidad_prestamo'] . '</p>';            
             echo '<span class="separador"></span>';
-            echo '<p>Cantidad: ' . $fila['p.cantidad_porPagar'] . '</p>';
-            echo '<p>Cantidad: ' . $fila['p.final_prestamo'] . '</p>';
+            echo '<p>Cantidad por pagar: ' . $fila['cantidad_porPagar'] . '</p>';
+            echo '<p>Final: ' . $fila['final_prestamo'] . '</p>';
           }
         }
         ?>

@@ -50,9 +50,8 @@
               <img src="../../img/credito.png">
               <h4>Iniciaste sesión en:</h4>
               <h5 id="fecha_actual"></h5>
-              <h5>Realizar operación</h5>
-              <a class="button gestion retirar" name="Retirar" href="retirar.php">Retirar dinero</a>
-              <a class="button gestion ingresar" name="Ingresar" href="ingresar.php">Ingresar dinero</a> 
+
+    
           </div>
       </section>
   </main>

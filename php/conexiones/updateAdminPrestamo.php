@@ -17,7 +17,7 @@ if(isset($_POST['rachazar'], $_POST['id_prestamos'])){
     $fecha_final=$_POST['fecha_final'];
 
     $updateAprovada="UPDATE prestamos SET solicitud_activa='0', estado='aprobada', final_prestamo='$fecha_final'";
-    $result=$conexion->query($updateRechazo);
+    $result=$conexion->query($updateAprovada);
     if($result){
         header("Location: ../paginas/listaPrestamosAdmin.php");
     }else{

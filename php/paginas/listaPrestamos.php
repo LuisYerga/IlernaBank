@@ -69,10 +69,10 @@
             echo '<span class="separador"></span>';
             echo '<p>Cantidad: ' . $fila['cantidad_prestamo'] . '</p>';
             echo '<span class="separador"></span>';
-            echo '<p>Fecha: ' . $fila['estado'] . '</p>';            
+            echo '<p>Estado: ' . $fila['estado'] . '</p>';            
             echo '<span class="separador"></span>';
             echo '<p>Fecha: ' . $fila['final_prestamo'] . '</p>';
-            if($fila['estado']!= "pendiente"){ 
+            if($fila['estado']== "aprobada"){ 
               echo '<p>Por pagar: ' . $fila['cantidad_porPagar'] . '</p>';
               ?>
               <form action="../conexiones/gestionPrestamos.php" method="POST">
