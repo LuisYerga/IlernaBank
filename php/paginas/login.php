@@ -19,8 +19,8 @@
     <main>
         <div id="InicioSesion" class="formInicio">
             <form action="../conexiones/logUser.php" method="POST">
-                <input type="text" placeholder="Email" id="email" name="email"> <br>
-                <input type="text" placeholder="Contraseña" id="contrasena" name="contrasena"> <br>
+                <input type="text" placeholder="Email" id="email" name="email" required> <br>
+                <input type="text" placeholder="Contraseña" id="contrasena" name="contrasena" required> <br>
                 <button type="submit" name="Enviar">Iniciar Sesión</button> <br>
             </form>
             <label>¿Aun no tienes una cuenta con nosotros?</label>

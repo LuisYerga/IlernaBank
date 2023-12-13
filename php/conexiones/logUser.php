@@ -22,10 +22,21 @@ if(isset($_POST['email'], $_POST['contrasena'])){
                         $row = $resultIban->fetch_assoc();
                         $iban = $row['iban'];
                         $_SESSION['iban']=$iban;
+
+                        $tipoUser="SELECT tipo_rol FROM rol WHERE id_perfil='$iban'";
+                        $resultTipo=$conexion->query($tipoUser);
+
+                        $row = $resultTipo->fetch_assoc();
+                        $tipo_rol = $row['tipo_rol'];
+
+                        if($tipo_rol=="usuario"){
+                            header("Location: ../paginas/inicioUser.php");
+                        }else if($tipo_rol=="admin"){
+                            header("Location: ../paginas/inicioAdmin.php");
+                        }
                     }
                 }
             }
-            header("Location: ../paginas/inicioUser.php");
         }else{
             header("Location: ../paginas/login.php");
         }

@@ -30,9 +30,27 @@ if(isset($_POST['mensajeEnviado'])){
     
         $_SESSION['conversacion'] = $mensajes;
     
-        header("Location: ../paginas/mensajes.php");
+        $tipoUser="SELECT tipo_rol FROM rol WHERE id_perfil='$iban'";
+        $resultTipo=$conexion->query($tipoUser);
+        $row = $resultTipo->fetch_assoc();
+        $tipo_rol = $row['tipo_rol'];
+    
+        if($tipo_rol=="usuario"){
+            header("Location: ../paginas/mensajes.php");
+        }else if($tipo_rol=="admin"){
+            header("Location: ../paginas/mensajesAdmin.php");
+        }
     }else{
-        header("Location: ../paginas/mensajes.php");
+        $tipoUser="SELECT tipo_rol FROM rol WHERE id_perfil='$iban'";
+        $resultTipo=$conexion->query($tipoUser);
+        $row = $resultTipo->fetch_assoc();
+        $tipo_rol = $row['tipo_rol'];
+    
+        if($tipo_rol=="usuario"){
+            header("Location: ../paginas/mensajes.php");
+        }else if($tipo_rol=="admin"){
+            header("Location: ../paginas/mensajesAdmin.php");
+        }
     }
 
 

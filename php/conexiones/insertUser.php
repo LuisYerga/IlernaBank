@@ -80,11 +80,21 @@ if(isset($_POST['nombre'], $_POST['apellidos'], $_POST['dni'],$_POST['f_nacimien
                 if(isset($iban)){
                     session_start();
                     $_SESSION['iban']=$iban;
+
+                    $tipoUser="SELECT tipo_rol FROM rol WHERE id_perfil='$iban'";
+                    $resultTipo=$conexion->query($tipoUser);
+                    $row = $resultTipo->fetch_assoc();
+                    $id_perfil = $row['id_perfil'];
+
+                    if($id_perfil="usuario"){
+                        header("Location: ../paginas/inicioUser.php");
+                    }else if($id_perfil="admin"){
+                        header("Location: ../paginas/inicioAdmin.php");
+                    }
                 }
             }
-            header("Location: ../paginas/inicioUser.php");
         } else {
-            echo "Error en la creación del usuario: " . $conexion->error;
+            header("Location: ../paginas/signin.php");
         }
     }else{
         header("Location: ../paginas/signin.php");

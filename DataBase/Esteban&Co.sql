@@ -51,7 +51,7 @@ cantidad_prestamo float,
 cantidad_porPagar float,
 solicitud_activa boolean,
 final_prestamo date,
-estado enum('pendiente','aprobada', 'rechazada'),
+estado enum('pendiente','aprobada', 'rechazada', 'finalizada'),
 id_solicitante varchar(50),
 foreign key (id_solicitante) references perfil(iban)
 );
@@ -99,5 +99,5 @@ foreign key (id_realizador_bizum) references operaciones(id_realizador),
 foreign key (id_recibidor_bizum) references contacto(id_agregado)
 );
 
-INSERT INTO perfil(iban, nombre, apellidos, dni, email, contrasena, fecha_nacimiento, direccion, ciudad, codigo_postal, provincia, pais, saldo) VALUES (1111111,'adimistrador', 'administrador', null, 'adminestebanco1@gmail.com', '$2y$10$cxhq5tCAhqaduSMEa3vbEOHh9PlVZ9sIiMC147gKmKrBr3KM5cEky', null, null, null, null, null, null, null);
-INSERT INTO rol(id_perfil, tipo_rol) VALUES (1111111, 'usuario');
+INSERT INTO perfil(iban, nombre, apellidos, dni, email, contrasena, fecha_nacimiento, direccion, ciudad, codigo_postal, provincia, pais, saldo) VALUES (1111111,'adimistrador', 'administrador', null, 'adminestebanco1@gmail.com', '$2y$10$rfYW6dX07y9M55QiEesTp.TvZkhpuq4hNOEz1ImHQrIC6kTkvohPO', null, null, null, null, null, null, null);
+INSERT INTO rol(id_perfil, tipo_rol) VALUES (1111111, 'admin');
