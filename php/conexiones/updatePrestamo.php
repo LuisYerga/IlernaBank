@@ -15,7 +15,7 @@ if(isset($_POST['cantidad_pagada'],$_POST['cantidadPorPagar'])){
         $updatePrestamo="UPDATE prestamos SET cantidad_porPagar='$nuevaPorPagar' WHERE id_prestamos='$id_prestamos'";
         $result=$conexion->query($updatePrestamo);
         if($result){
-            header("Location: ../paginas/listaPrestamo.php");
+            header("Location: ../paginas/listaPrestamos.php");
         }else{
             header("Location: ../paginas/pagarPrestamo.php");
         }
