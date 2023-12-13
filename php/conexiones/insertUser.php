@@ -69,7 +69,7 @@ if(isset($_POST['nombre'], $_POST['apellidos'], $_POST['dni'],$_POST['f_nacimien
     $verificadorDni=verificarDni($dni, $conexion);
 
     if($verificadorDni===true && $verificadorEmail===true){
-        $insertPerfil = "INSERT INTO perfil(iban, nombre, apellidos, dni, email, contrasena, fecha_nacimiento, direccion, ciudad, codigo_postal, provincia, pais, saldo) VALUES ('$iban','$nombre', '$apellidos', '$dni', '$email', '$contrasena', '$f_nacimiento', 'null', 'null', 'null', 'null', '$pais', 'null')";
+        $insertPerfil = "INSERT INTO perfil(iban, nombre, apellidos, dni, email,imagen, contrasena, fecha_nacimiento, direccion, ciudad, codigo_postal, provincia, pais, saldo) VALUES ('$iban','$nombre', '$apellidos', '$dni', '$email','null', '$contrasena', '$f_nacimiento', 'null', 'null', 'null', 'null', '$pais', 'null')";
         $result=$conexion->query($insertPerfil);
 
         $insertRol= "INSERT INTO rol(id_perfil, tipo_rol) VALUES ('$iban', 'usuario')";
