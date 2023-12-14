@@ -50,13 +50,13 @@
   <main>
     <section class="listaContactos">
         <div class="nuevo" id="nuevoContacto">
-            <a class="button option" id="agregar" href="agregarContacto.php"><img src="../../img/mas.png"><p>Agregar Contacto</p></a>
+            <a class="button opt" id="agregar" href="agregarContacto.php"><img src="../../img/mas.png"><h3>Agregar Contacto</h3></a>
         </div>
         <div class="listado">
         <?php 
           if($resultContactos->num_rows == 0) {
             ?>
-            <div id=impar>
+            <div id="impar" class="lista">
             <?php
             echo "<p>No hay contactos agregados</p>";
             ?>

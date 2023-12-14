@@ -15,7 +15,7 @@
 
     <!--PHP-->
     <?php include("../conexiones/gestionMensajes.php");?>
-    <?php include_once("../conexiones/recuperarFoto.php");?>
+    <?php include("../conexiones/recuperarFoto.php");?>
 
 </head>
 <body>
@@ -60,7 +60,6 @@
 
     <section class="mensajes">
     <?php 
-    session_start();
     if(isset($_SESSION['conversacion'])) {
         $mensajes = $_SESSION['conversacion'];
 

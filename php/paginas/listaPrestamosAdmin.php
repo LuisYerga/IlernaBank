@@ -53,7 +53,7 @@
       <?php 
         if($resultPrestamosPendiente->num_rows == 0) {
           ?>
-          <div id=impar>
+          <div id="impar" class="lista">
           <?php
           echo "<p>No hay prestamos pendientes</p>";
           ?>
@@ -103,7 +103,7 @@
       <?php 
         if($resultPrestamos->num_rows == 0) {
           ?>
-          <div id=impar>
+          <div id="impar" class="lista">
           <?php
           echo "<p>No hay prestamos pendientes</p>";
           ?>

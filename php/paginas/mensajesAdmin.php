@@ -50,7 +50,7 @@
 
     <section class="mensajes">
     <?php 
-    session_start();
+
     if(isset($_SESSION['conversacion'])) {
         $mensajes = $_SESSION['conversacion'];
 

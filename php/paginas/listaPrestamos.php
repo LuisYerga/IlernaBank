@@ -64,7 +64,7 @@
       <?php 
         if($resultPrestamos->num_rows == 0) {
           ?>
-          <div id=impar>
+          <div id="impar" class="lista">
           <?php
           echo "<p>No hay historial de prestamos</p>";
           ?>
