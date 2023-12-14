@@ -2,7 +2,6 @@
 
 include_once("conexion.php");
 
-session_start();
 $iban=$_SESSION['iban'];
 $selectImagenPerfil= "SELECT imagen FROM perfil WHERE iban='$iban'";
 $resultImagenPerfil=$conexion->query($selectImagenPerfil);

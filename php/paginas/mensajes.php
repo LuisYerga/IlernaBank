@@ -15,6 +15,7 @@
 
     <!--PHP-->
     <?php include("../conexiones/gestionMensajes.php");?>
+    <?php include("../conexiones/obtenerPerfil.php");?>
     <?php include("../conexiones/recuperarFoto.php");?>
 
 </head>

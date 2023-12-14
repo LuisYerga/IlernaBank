@@ -48,8 +48,8 @@
     </div>
   </aside>
   <main>
-    <section class="listaPrestamos" id="listaPrestamos">
-      <div class="listado">
+    <section class="listaPrestamos" id="listaPrestamosAdmin">
+      <div class="listadoAdmin">
       <?php 
         if($resultPrestamosPendiente->num_rows == 0) {
           ?>
@@ -78,19 +78,20 @@
             echo '<p>Motivo: ' . $fila['motivo_prestamo'] . '</p>';            
             echo '<span class="separador"></span>';
             echo '<p>Cantidad: ' . $fila['cantidad_prestamo'] . '</p>';
+            echo '<span class="separador"></span>';
             ?>
+            <p>Inserte fecha límite:</p>
             <form action="../conexiones/updateAdminPrestamo.php" method="POST">
                 <input type="hidden" name="id_prestamos" value="<?php echo $fila['id_prestamos'] ?>">
                 <input type="text" name="fecha_final" required>
-                <button type="submit" name="Aprobar"></button>
+                <button type="submit" name="Aprobar">Aprobar</button>
             </form>
             <form action="../conexiones/updateAdminPrestamo.php" method="POST">
                 <input type="hidden" name="id_prestamos" value="<?php echo $fila['id_prestamos'] ?>">
                 <input type="hidden" name="rechazar" >
-                <button type="submit" name="Rechazar"></button>
+                <button type="submit" name="Rechazar">Rechazar</button>
             </form>
             </div>
-            <hr>
             <?php
             
           }
@@ -105,7 +106,7 @@
           ?>
           <div id="impar" class="lista">
           <?php
-          echo "<p>No hay prestamos pendientes</p>";
+          echo "<p>No hay prestamos aprobados</p>";
           ?>
           </div>
           <?php
@@ -128,6 +129,7 @@
             echo '<p>Cantidad: ' . $fila['cantidad_prestamo'] . '</p>';            
             echo '<span class="separador"></span>';
             echo '<p>Cantidad por pagar: ' . $fila['cantidad_porPagar'] . '</p>';
+            echo '<span class="separador"></span>';
             echo '<p>Final: ' . $fila['final_prestamo'] . '</p>';
             ?>
             </div>

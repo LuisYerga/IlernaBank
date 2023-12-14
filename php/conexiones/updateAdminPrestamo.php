@@ -23,10 +23,10 @@ if(isset($_POST['rachazar'], $_POST['id_prestamos'])){
     $saldoUser = $row['saldo']; 
     $updateSaldo=$saldoUser+$cantidad;
 
-    $updateSolicitante="UPDATE perfil pe SET pe.saldo='$updateSaldo' INNER JOIN prestamos pr ON pr.id_solicitante=pe.iban WHERE pr.id_prestamos='$id_prestamos'";
+    $updateSolicitante="UPDATE perfil pe INNER JOIN prestamos pr ON pr.id_solicitante=pe.iban SET pe.saldo='$updateSaldo' WHERE pr.id_prestamos='$id_prestamos'";
     $result=$conexion->query($updateSolicitante);
     
-    $updateAprovada="UPDATE prestamos SET solicitud_activa='0', estado='aprobada', final_prestamo='$fecha_final' WHERE id_prestamo='$id_prestamos'";
+    $updateAprovada="UPDATE prestamos SET solicitud_activa='0', estado='aprobada', final_prestamo='$fecha_final' WHERE id_prestamos='$id_prestamos'";
     $result=$conexion->query($updateAprovada);
     if($result){
         header("Location: ../paginas/listaPrestamosAdmin.php");
