@@ -8,7 +8,7 @@
     <link href="../../css/bootstrap.css" rel="stylesheet">
     <link href="../../css/headers.css" rel="stylesheet">
     <link href="../../css/desplegable.css" rel="stylesheet">
-    <link href="../../css/styleTarjetas.css" rel="stylesheet">
+    <link href="../../css/mostrarListas.css" rel="stylesheet">
 
     <!--JS-->
     <script defer src="../../js/menu.js"></script>
@@ -58,14 +58,30 @@
   <main>
     <section class="listaPrestamos" id="listaPrestamos">
       <div class="nuevo" id="nuevoPrestamo">
-        <a class="button option" id="solicitar" href="solicitarPrestamos.php"><img src="../../img/mas.png"><p>Solicitar prestamo</p></a>
+        <a class="button opt" id="solicitar" href="solicitarPrestamos.php"><img src="../../img/mas.png"><h3>Solicitar prestamo</h3></a>
       </div>
       <div class="listado">
       <?php 
         if($resultPrestamos->num_rows == 0) {
+          ?>
+          <div id=impar>
+          <?php
           echo "<p>No hay historial de prestamos</p>";
+          ?>
+          </div>
+          <?php
         }else{
+          $idNum=0;
           while($fila=$resultPrestamos->fetch_assoc()){
+            $idNum++;
+            if($idNum%2===0){
+              $id="par";
+            }else{
+              $id="impar";
+            }
+            ?>
+            <div id="<?php echo $id?>" class="lista">
+            <?php
             echo '<p>Descripción: ' . $fila['nombre_prestamo'] . '</p>';
             echo '<span class="separador"></span>';
             echo '<p>Cantidad: ' . $fila['cantidad_prestamo'] . '</p>';
@@ -74,15 +90,17 @@
             echo '<span class="separador"></span>';
             echo '<p>Fecha: ' . $fila['final_prestamo'] . '</p>';
             if($fila['estado']== "aprobada"){ 
+              echo '<span class="separador"></span>';
               echo '<p>Por pagar: ' . $fila['cantidad_porPagar'] . '</p>';
               ?>
               <form action="../conexiones/gestionPrestamos.php" method="POST">
                 <input type="hidden" name="id_prestamos" value="<?php echo $fila['id_prestamos']; ?>">
-                <button type="submit" name="Pagar prestamo"></button>
+                <button type="submit" name="Pagar prestamo">Pagar prestamo</button>
               </form>
               <?php
-            }
-            echo '<hr>'; 
+            }?>
+            </div>
+            <?php
           }
         }
         ?>

@@ -8,7 +8,7 @@
     <link href="../../css/bootstrap.css" rel="stylesheet">
     <link href="../../css/headers.css" rel="stylesheet">
     <link href="../../css/desplegable.css" rel="stylesheet">
-    <link href="../../css/styleTarjetas.css" rel="stylesheet">
+    <link href="../../css/mostrarListas.css" rel="stylesheet">
 
     <!--JS-->
     <script defer src="../../js/menu.js"></script>
@@ -64,14 +64,29 @@
         <div class="listado">
         <?php 
           if($resultContactos->num_rows == 0) {
+            ?>
+            <div id="impar">
+            <?php
             echo "<p>No hay contactos agregados</p>";
+            ?>
+            </div>
+            <?php
           }else{
+            $idNum=0;
             while($fila=$resultContactos->fetch_assoc()){
+              $idNum++;
+              if($idNum%2===0){
+                $id="par";
+              }else{
+                $id="impar";
+              }
               ?>
+              <div id="<?php echo $id?>" class="lista">
               <form action="../conexiones/gestionMensajes.php" method="POST">
                 <input type="hidden" name="id_agregado" value="<?php echo $fila['id_agregado']; ?>">
                 <button type="submit" name="Enviar"><p><?php echo $fila['nombre_agregado']?></p></button>
               </form>
+              </div>
               <hr>
             <?php
             }

@@ -13,6 +13,7 @@ header{
         font-size: 50px;
         text-align: center;
         margin: 0%; 
+        font-style: italic;
     }
 }
 
@@ -20,6 +21,7 @@ header{
     display: flex;
     justify-content: space-between;
     text-align: center;
+    font-style: italic;
     .esteban{
         justify-content:left; 
         margin-left: 1vw;

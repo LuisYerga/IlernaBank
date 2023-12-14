@@ -15,6 +15,7 @@
     <script defer src="../../js/eliminarFecha.js"></script>
     
     <!--PHP-->
+    <?php include_once("../conexiones/obtenerPerfil.php");?>
     <?php include_once("../conexiones/recuperarFoto.php");?>
 <body>
   <header>

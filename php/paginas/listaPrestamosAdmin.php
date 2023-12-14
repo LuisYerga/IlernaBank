@@ -8,7 +8,7 @@
     <link href="../../css/bootstrap.css" rel="stylesheet">
     <link href="../../css/headers.css" rel="stylesheet">
     <link href="../../css/desplegable.css" rel="stylesheet">
-    <link href="../../css/styleTarjetas.css" rel="stylesheet">
+    <link href="../../css/mostrarListas.css" rel="stylesheet">
 
     <!--JS-->
     <script defer src="../../js/menu.js"></script>
@@ -52,9 +52,25 @@
       <div class="listado">
       <?php 
         if($resultPrestamosPendiente->num_rows == 0) {
+          ?>
+          <div id=impar>
+          <?php
           echo "<p>No hay prestamos pendientes</p>";
+          ?>
+          </div>
+          <?php
         }else{
+          $idNum=0;
           while($fila=$resultPrestamosPendiente->fetch_assoc()){
+            $idNum++;
+            if($idNum%2===0){
+              $id="par";
+            }else{
+              $id="impar";
+            }
+            ?>
+            <div id="<?php echo $id?>" class="lista">
+            <?php
             echo '<p>Usuario: ' . $fila['email'] . '</p>';
             echo '<span class="separador"></span>';
             echo '<p>Prestamos: ' . $fila['nombre_prestamo'] . '</p>';
@@ -73,8 +89,10 @@
                 <input type="hidden" name="rechazar" >
                 <button type="submit" name="Rechazar"></button>
             </form>
+            </div>
             <hr>
             <?php
+            
           }
         }
         ?>
@@ -84,9 +102,25 @@
       <div class="listado">
       <?php 
         if($resultPrestamos->num_rows == 0) {
+          ?>
+          <div id=impar>
+          <?php
           echo "<p>No hay prestamos pendientes</p>";
+          ?>
+          </div>
+          <?php
         }else{
+          $idNum=0;
           while($fila=$resultPrestamos->fetch_assoc()){
+            $idNum++;
+            if($idNum%2===0){
+              $id="par";
+            }else{
+              $id="impar";
+            }
+            ?>
+            <div id="<?php echo $id?>" class="lista">
+            <?php
             echo '<p>Usuario: ' . $fila['email'] . '</p>';
             echo '<span class="separador"></span>';
             echo '<p>Prestamos: ' . $fila['nombre_prestamo'] . '</p>';
@@ -95,6 +129,9 @@
             echo '<span class="separador"></span>';
             echo '<p>Cantidad por pagar: ' . $fila['cantidad_porPagar'] . '</p>';
             echo '<p>Final: ' . $fila['final_prestamo'] . '</p>';
+            ?>
+            </div>
+            <?php
           }
         }
         ?>
