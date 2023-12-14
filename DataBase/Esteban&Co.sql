@@ -100,5 +100,5 @@ foreign key (id_realizador_bizum) references operaciones(id_realizador),
 foreign key (id_recibidor_bizum) references contacto(id_agregado)
 );
 
-INSERT INTO perfil(iban, nombre, apellidos, dni, email,imagen, contrasena, fecha_nacimiento, direccion, ciudad, codigo_postal, provincia, pais, saldo) VALUES (1111111,'adimistrador', 'administrador', null, 'adminestebanco1@gmail.com', null,'$2y$10$rfYW6dX07y9M55QiEesTp.TvZkhpuq4hNOEz1ImHQrIC6kTkvohPO', null, null, null, null, null, null, null);
+INSERT INTO perfil(iban, nombre, apellidos, dni, email,imagen, contrasena, fecha_nacimiento, direccion, ciudad, codigo_postal, provincia, pais, saldo) VALUES (1111111,'adimistrador', 'administrador', null, 'adminestebanco1@gmail.com', '../../img/perfil/usu.png','$2y$10$rfYW6dX07y9M55QiEesTp.TvZkhpuq4hNOEz1ImHQrIC6kTkvohPO', null, null, null, null, null, null, null);
 INSERT INTO rol(id_perfil, tipo_rol) VALUES (1111111, 'admin');

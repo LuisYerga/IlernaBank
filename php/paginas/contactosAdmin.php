@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactos</title>
+    <title>Contactos Admin</title>
     <!--CSS-->
     <link href="../../css/bootstrap.css" rel="stylesheet">
     <link href="../../css/headers.css" rel="stylesheet">
@@ -30,7 +30,7 @@
       <div class="iconosMenu">
         <a class="button" href="inicioAdmin.php" id="volver"><img src="../../img/salir.png"></a>
         <a class="button" href="contactosAdmin.php" id="correo"><img src="../../img/correo.png"></a>
-        <a class="button" id="menu"><img src="../../img/usu.png"></a>
+        <a class="button" id="menu"><img src="<?php echo $imagenPerfil;?>"></a>
       </div>
     </div>
   </header>

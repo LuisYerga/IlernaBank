@@ -30,7 +30,7 @@
       <div class="iconosMenu">
         <a class="button" href="listaPrestamos.php" id="volver"><img src="../../img/salir.png"></a>
         <a class="button" href="contactos.php" id="correo"><img src="../../img/correo.png"></a>
-        <a class="button" id="menu"><img src="../../img/usu.png"></a>
+        <a class="button" id="menu"><img src="<?php echo $imagenPerfil;?>"></a>
       </div>
     </div>
   </header>
@@ -51,7 +51,7 @@
       <div id="Ingresar" class="opciones">
         <a class="button option" id="ingresar" href="ingresar.php"><img src="../../img/usuario.png"><p>Ingresar dinero</p></a>
       </div>
-      <div id="Ingresar" class="opciones">
+      <div id="Cerrar" class="opciones">
         <a class="button option salida" id="salir"href="login.php"><img src="../../img/flecha.png"><p>Cerrar sesión</p></a>
       </div>
     </div>
