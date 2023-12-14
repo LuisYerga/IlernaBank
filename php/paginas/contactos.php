@@ -82,9 +82,10 @@
               }
               ?>
               <div id="<?php echo $id?>" class="lista">
+              <img class="imgPerfil" src="<?php echo $fila['imagen']?>">
               <form action="../conexiones/gestionMensajes.php" method="POST">
                 <input type="hidden" name="id_agregado" value="<?php echo $fila['id_agregado']; ?>">
-                <button type="submit" name="Enviar"><p><?php echo $fila['nombre_agregado']?></p></button>
+                <button type="submit" id="Contacto"><p><?php echo $fila['nombre_agregado']?></p></button>
               </form>
               </div>
               <hr>

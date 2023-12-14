@@ -63,6 +63,13 @@ main{
     padding-top: 50px;
 }
 
+#Contacto{
+    width: 50vw;
+}
+
+.imgPerfil{
+    width: 50px;
+}
 @media only screen and (max-width: 785px) {
     .lista{
         display: list-item;
@@ -87,10 +94,12 @@ main{
 
     input,
     #par button,
+    .imgPerfil,
     #impar button {
         display: block;
         margin: 0 auto;
     }
+     
 }
 
 @media only screen and (max-width: 1165px) {

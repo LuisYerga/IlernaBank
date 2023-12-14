@@ -63,7 +63,7 @@
       <div class="container">
       <div class="recuadro">
         <a class="button pincel" id="pincel1"><img src="../../img/pincel.png"></a>
-        <img src="<?php echo $imagenPerfil;?>">
+        <img class="imgPerfil" src="<?php echo $imagenPerfil;?>">
         <h5>Nombre:</h5>
         <p><?php echo $nombrePerfil;?></p>
         <h5>Apellidos:</h5>
@@ -92,6 +92,7 @@
         <div class="recuadro">
         <a class="button pincel" id="pincel2"><img src="../../img/pincel.png"></a>
         <form action="../conexiones/updateUser.php" method="POST" enctype="multipart/form-data">
+          <img class="imgPerfil" src="<?php echo $imagenPerfil;?>"> <br>
           <input type="file" accept="image/*" name="image">
           <h5>Nombre:</h5>
           <input type="text" value="<?php echo $nombrePerfil;?>" placeholder="<?php echo $nombrePerfil;?>" id="nombre" name="nombre"> <br>
