@@ -16,6 +16,7 @@
     
     <!--PHP-->
     <?php include_once("../conexiones/obtenerAdmin.php");?>
+    <?php include_once("../conexiones/recuperarFoto.php");?>
 </head>
 <body>
   <header>

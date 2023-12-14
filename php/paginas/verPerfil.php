@@ -18,6 +18,7 @@
 
     <!--PHP-->
     <?php include_once("../conexiones/obtenerPerfil.php");?>
+    <?php include_once("../conexiones/recuperarFoto.php");?>
 </head>
 <body>
   <header>
