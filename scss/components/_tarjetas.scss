@@ -1,15 +1,15 @@
-section{
+@mixin section-bg-color {
   background-color: $color-fondo;
 }
 
-.container{
+@mixin flex-container {
   display: flex;
   justify-content: center;
   padding-top: 3vh;
   text-align: center;
 }
 
-.recuadro{
+@mixin common-box {
   position: relative;
   padding-top: 10px;
   width: 80vw;
@@ -18,29 +18,52 @@ section{
   border-radius: 1%;
 }
 
-#boton{
+@mixin common-button {
   margin-top: 5%;
   margin-bottom: 20px;
   background-color: $color-fondo;
   color: $contraste-blanco;
 }
 
-.pincel {
+@mixin paintbrush {
   position: absolute;
   top: 0;
   right: 0;
   padding: 10px;
 }
-.imgPerfil{
+
+@mixin profile-image {
   width: 100px;
 }
 
-@media only screen and (min-width: 1024px) {
-  .recuadro{
+section {
+  @include section-bg-color;
+}
+
+.container {
+  @include flex-container;
+}
+
+.recuadro {
+  @include common-box;
+
+  @media only screen and (min-width: 1024px) {
     width: 50vw;
   }
-  #boton{
+}
+
+#boton {
+  @include common-button;
+
+  @media only screen and (min-width: 1024px) {
     margin-top: 3%;
   }
 }
 
+.pincel {
+  @include paintbrush;
+}
+
+.imgPerfil {
+  @include profile-image;
+}
