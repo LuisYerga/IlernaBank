@@ -49,11 +49,12 @@
       <section class="principal">
           <div class="container">
               <h3>Bienvenido de vuelta Administrador</h3>
+              <div class="tarjetaIban">
               <img src="../../img/credito.png">
+              <h4><?php echo $iban;?></h4>
+              </div>
               <h4>Iniciaste sesión en:</h4>
               <h5 id="fecha_actual"></h5>
-
-    
           </div>
       </section>
   </main>

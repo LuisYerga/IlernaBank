@@ -37,11 +37,14 @@
   </header>
   <aside class="aside" id="aside">
     <div class="head">
+      <div id="Casa" class="opciones">
+        <a class="button option" id="casa" href="inicioAdmin.php"><img src="../../img/inicio.png"><p>Inicio</p></a>
+      </div>
       <div id="Buzon" class="opciones">
         <a class="button option" id="buzon" href="contactosAdmin.php"><img src="../../img/correo2.png"><p>Buzón</p></a>
       </div>
       <div id="Prestamos" class="opciones">
-        <a class="button option" id="prestamos" href="listaPrestamosAdmin.php"><img src="../../img/usuario.png"><p>Prestamos</p></a>
+        <a class="button option" id="prestamos" href="listaPrestamosAdmin.php"><img src="../../img/prestamo.png"><p>Prestamos</p></a>
       </div>
       <div id="Cerrar" class="opciones">
         <a class="button option salida" id="salir"href="login.php"><img src="../../img/flecha.png"><p>Cerrar sesión</p></a>

@@ -36,6 +36,9 @@
   </header>
   <aside class="aside" id="aside">
     <div class="head">
+      <div id="Casa" class="opciones">
+        <a class="button option" id="casa" href="inicioUser.php"><img src="../../img/inicio.png"><p>Inicio</p></a>
+      </div>
       <div id="Perfil" class="opciones">
         <a class="button option" id="perfil" href="verPerfil.php"><img src="../../img/usuario.png"><p>Mi perfil</p></a>
       </div>
@@ -43,13 +46,13 @@
         <a class="button option" id="buzon" href="contactos.php"><img src="../../img/correo2.png"><p>Buzón</p></a>
       </div>
       <div id="Prestamos" class="opciones">
-        <a class="button option" id="prestamos" href="listaPrestamos.php"><img src="../../img/usuario.png"><p>Prestamos</p></a>
+        <a class="button option" id="prestamos" href="listaPrestamos.php"><img src="../../img/prestamo.png"><p>Prestamos</p></a>
       </div>
       <div id="Retirar" class="opciones">
-        <a class="button option" id="retirar" href="retirar.php"><img src="../../img/usuario.png"><p>Retirar dinero</p></a>
+        <a class="button option" id="retirar" href="retirar.php"><img src="../../img/retirar.png"><p>Retirar dinero</p></a>
       </div>
       <div id="Ingresar" class="opciones">
-        <a class="button option" id="ingresar" href="ingresar.php"><img src="../../img/usuario.png"><p>Ingresar dinero</p></a>
+        <a class="button option" id="ingresar" href="ingresar.php"><img src="../../img/ingresar.png"><p>Ingresar dinero</p></a>
       </div>
       <div id="Cerrar" class="opciones">
         <a class="button option salida" id="salir"href="login.php"><img src="../../img/flecha.png"><p>Cerrar sesión</p></a>
@@ -60,15 +63,23 @@
       <section class="principal">
           <div class="container">
               <h3>Bienvenido de vuelta <?php echo $nombrePerfil;?></h3>
+              <div class="tarjetaIban">
               <img src="../../img/credito.png">
+              <h4><?php echo $iban;?></h4>
+              </div>
               <h4>Iniciaste sesión en:</h4>
               <h5 id="fecha_actual"></h5>
+              <div class="partes">
               <h5>Tu saldo</h5>
               <h3><?php echo $nombreSaldo;?></h3>
+              </div>
+              <div class="partes">
               <h5>Realizar operación</h5>
               <a class="button gestion retirar" name="Retirar" href="retirar.php">Retirar dinero</a>
               <a class="button gestion ingresar" name="Ingresar" href="ingresar.php">Ingresar dinero</a> 
               <br>
+              </div>
+              <div class="partes">
               <h5>Últimos movimientos</h5>
               <?php 
                 if($resultMovimientos->num_rows == 0) {
@@ -82,6 +93,7 @@
                   }
                 }
               ?>
+              </div>
           </div>
       </section>
   </main>
