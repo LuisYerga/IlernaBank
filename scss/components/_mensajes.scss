@@ -1,0 +1,52 @@
+section{
+    background-color: $color-fondo;
+}
+body{    
+    background-color: $color-fondo;
+}
+
+.mensaje{
+    background-color: $contraste-blanco;
+    color: $contraste-negro;
+    margin: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    max-width: 70%;
+    width: fit-content;
+    word-wrap: break-word;
+}
+
+#conversacion{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    color: $contraste-negro;
+    width: auto;
+}
+
+input{
+    width: 30vw;
+}
+
+#yo{
+    margin-left: auto;
+}
+
+#contacto{
+    margin-right: auto;
+}
+
+.mensajes h3{
+    color: $color-header;
+}
+
+button img{
+    width: 30px;
+}
+  
+@media only screen and (max-width: 1165px) {
+    input{
+        width: 50vw;
+    }
+}

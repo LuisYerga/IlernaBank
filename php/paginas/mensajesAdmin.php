@@ -8,13 +8,15 @@
     <link href="../../css/bootstrap.css" rel="stylesheet">
     <link href="../../css/headers.css" rel="stylesheet">
     <link href="../../css/desplegable.css" rel="stylesheet">
-
+    <link href="../../css/conversacion.css" rel="stylesheet">
+    
     <!--JS-->
     <script defer src="../../js/menu.js"></script>
     <script defer src="../../js/eliminarFecha.js"></script>
 
     <!--PHP-->
     <?php include("../conexiones/gestionMensajes.php");?>
+    <?php include("../conexiones/obtenerPerfil.php");?>
     <?php include_once("../conexiones/recuperarFoto.php");?>
 </head>
 <body>
@@ -47,19 +49,33 @@
     </div>
   </aside>
   <main>
-
+  <div class="container" id="conversacion">
     <section class="mensajes">
+    <?php $nombre_agregado=$_SESSION['nombre_agregado'];?>
+      <h3><?php echo $nombre_agregado?></h3>
     <?php 
-
     if(isset($_SESSION['conversacion'])) {
         $mensajes = $_SESSION['conversacion'];
 
         if(empty($mensajes)) {
+          ?>
+          <div class="mensaje">
+          <?php
           echo "<p>No hay mensajes aun</p>";
+          ?>
+          </div>
+          <?php
         }else{
             foreach($mensajes as $mensaje){
+              if($mensaje['id_remitente']==$iban){
+                $id="yo";
+              }else{
+                $id="contacto";
+              }
                 ?>
-                <p id="<?php echo $mensaje['id_remitente'];?>"><?php echo $mensaje['mensaje'];?></p>
+                <div class="mensaje" id="<?php echo $id;?>">
+                <p><?php echo $mensaje['mensaje'];?></p>
+                </div>
                 <?php
             }
         }
@@ -69,9 +85,10 @@
     <section class="enviarMensajes">
         <form action="../conexiones/insertMensajes.php" method="POST">
             <input type="text" id="mensajeEnviado" name="mensajeEnviado" required>
-            <button type="submit" name="Enviar"></a>
+            <button type="submit" name="Enviar"><img src="../../img/enviar.png"></button>
         </form>
     </section>
+    </div>
   </main>
 </body>
 </html>

@@ -19,7 +19,7 @@ if(isset($_POST['mensajeEnviado'])){
         $selectConversacion= "(SELECT id_mensajes,id_remitente, mensaje FROM mensajes WHERE id_remitente='$id_agregado' AND id_destinatario='$iban')
         UNION ALL 
         (SELECT id_mensajes, id_remitente, mensaje FROM mensajes WHERE id_remitente='$iban' AND id_destinatario='$id_agregado')
-        ORDER BY id_mensajes DESC";
+        ORDER BY id_mensajes ASC";
     
         $conversacion=$conexion->query($selectConversacion);
     
