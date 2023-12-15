@@ -77,7 +77,7 @@
               ?>
               <div id="<?php echo $id?>" class="lista">
               <form action="../conexiones/gestionMensajes.php" method="POST">
-                <input type="hidden" name="id_agregado" value="<?php echo $fila['id_agregado']; ?>">
+                <input type="hidden" name="id_agregado" value="<?php echo $fila['id_agregado']; ?>" required>
                 <button type="submit" name="Enviar"><p><?php echo $fila['nombre_agregado']?></p></button>
               </form>
               </div>

@@ -85,13 +85,13 @@
             ?>
             <p>Inserte fecha límite:</p>
             <form action="../conexiones/updateAdminPrestamo.php" method="POST">
-                <input type="hidden" name="id_prestamos" value="<?php echo $fila['id_prestamos'] ?>">
+                <input type="hidden" name="id_prestamos" value="<?php echo $fila['id_prestamos'] ?>" required>
                 <input type="text" name="fecha_final" required>
                 <button type="submit" name="Aprobar">Aprobar</button>
             </form>
             <form action="../conexiones/updateAdminPrestamo.php" method="POST">
-                <input type="hidden" name="id_prestamos" value="<?php echo $fila['id_prestamos'] ?>">
-                <input type="hidden" name="rechazar" >
+                <input type="hidden" name="id_prestamos" value="<?php echo $fila['id_prestamos'] ?>" required>
+                <input type="hidden" name="rechazar">
                 <button type="submit" name="Rechazar">Rechazar</button>
             </form>
             </div>

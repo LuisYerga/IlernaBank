@@ -68,9 +68,9 @@
         <p><?php echo $nombreSaldo;?></p>
         <form action="../conexiones/updateSaldo.php" method="POST"> 
           <h4>Cantidad a ingresar</h4> 
-          <input type="float" placeholder="Introduzca una cantidad" id="ingresar" name="ingresar"> <br>
+          <input type="float" placeholder="Introduzca una cantidad" id="ingresar" name="ingresar" required> <br>
           <h4>Concepto</h4> 
-          <input type="text" placeholder="Ingresar dinero" id="concepto" name="concepto"> <br>
+          <input type="text" placeholder="Ingresar dinero" id="concepto" name="concepto" required> <br>
           <button id="boton" type="submit" name="Enviar">Realizar operación</button><br>
         </form>
       </div>

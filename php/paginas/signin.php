@@ -19,13 +19,13 @@
     <main>
         <div id="CrearCuenta" class="formInicio">
             <form action="../conexiones/insertUser.php" method="POST">
-                <input type="text" placeholder="Nombre" id="nombre" name="nombre"> <br>
-                <input type="text" placeholder="Apellido" id="apellidos" name="apellidos"><br>
-                <input type="text" placeholder="DNI" id="dni" name="dni"><br>
-                <input type="text" placeholder="Fecha de nacimiento" id="f_nacimiento" name="f_nacimiento"><br>
-                <input type="text" placeholder="Email" id="email" name="email"><br>
-                <input type="text" placeholder="Contraseña" id="contrasena" name="contrasena"><br>
-                <input type="text" placeholder="País" id="pais" name="pais"><br>
+                <input type="text" placeholder="Nombre" id="nombre" name="nombre" required> <br>
+                <input type="text" placeholder="Apellido" id="apellidos" name="apellidos" required><br>
+                <input type="text" placeholder="DNI" id="dni" name="dni" required><br>
+                <input type="text" placeholder="Fecha de nacimiento" id="f_nacimiento" name="f_nacimiento" required><br>
+                <input type="text" placeholder="Email" id="email" name="email" required><br>
+                <input type="text" placeholder="Contraseña" id="contrasena" name="contrasena" required><br>
+                <input type="text" placeholder="País" id="pais" name="pais" required><br>
                 <button type="submit" name="Enviar">Crear cuenta</button><br>
             </form>
             <label>¿Ya tienes una cuenta?</label>

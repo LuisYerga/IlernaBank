@@ -98,23 +98,23 @@
           <img class="imgPerfil" src="<?php echo $imagenPerfil;?>"> <br>
           <input type="file" accept="image/*" name="image">
           <h5>Nombre:</h5>
-          <input type="text" value="<?php echo $nombrePerfil;?>" placeholder="<?php echo $nombrePerfil;?>" id="nombre" name="nombre"> <br>
+          <input type="text" value="<?php echo $nombrePerfil;?>" placeholder="<?php echo $nombrePerfil;?>" id="nombre" name="nombre" required> <br>
           <h5>Apellidos:</h5>
-          <input type="text" value="<?php echo $nombreApellidos;?>" placeholder="<?php echo $nombreApellidos;?>" id="apellidos" name="apellidos"><br>
+          <input type="text" value="<?php echo $nombreApellidos;?>" placeholder="<?php echo $nombreApellidos;?>" id="apellidos" name="apellidos" required><br>
           <h5>DNI:</h5>
           <input type="text" value="<?php echo $nombreDni;?>" placeholder="<?php echo $nombreDni;?>" id="dni" name="dni"><br>
           <h5>Fecha Nacimiento:</h5>
-          <input type="text"value="<?php echo $nombreFnac;?>"  placeholder="<?php echo $nombreFnac;?>" id="f_nacimiento" name="f_nacimiento"><br>
+          <input type="text"value="<?php echo $nombreFnac;?>"  placeholder="<?php echo $nombreFnac;?>" id="f_nacimiento" name="f_nacimiento" required><br>
           <h5>Pais:</h5>
-          <input type="text" value="<?php echo $nombrePais?>" placeholder="<?php echo $nombrePais;?>" id="pais" name="pais"><br>
+          <input type="text" value="<?php echo $nombrePais?>" placeholder="<?php echo $nombrePais;?>" id="pais" name="pais" required><br>
           <h5>Código postal:</h5>
-          <input type="text" value="<?php echo $nombreCod;?>" placeholder="<?php echo $nombreCod;?>" id="cod_postal" name="cod_postal"><br>
+          <input type="text" value="<?php echo $nombreCod;?>" placeholder="<?php echo $nombreCod;?>" id="cod_postal" name="cod_postal" required><br>
           <h5>Provincia:</h5>
-          <input type="text" value="<?php echo $nombreProv;?>" placeholder="<?php echo $nombreProv;?>" id="provincia" name="provincia"><br>
+          <input type="text" value="<?php echo $nombreProv;?>" placeholder="<?php echo $nombreProv;?>" id="provincia" name="provincia" required><br>
           <h5>Ciudad:</h5>
-          <input type="text" value="<?php echo $nombreCiudad;?>" placeholder="<?php echo $nombreCiudad;?>" id="ciudad" name="ciudad"><br>
+          <input type="text" value="<?php echo $nombreCiudad;?>" placeholder="<?php echo $nombreCiudad;?>" id="ciudad" name="ciudad" required><br>
           <h5>Dirección:</h5>
-          <input type="text" value="<?php echo $nombreDir;?>" placeholder="<?php echo $nombreDir;?>" id="direccion" name="direccion"><br>
+          <input type="text" value="<?php echo $nombreDir;?>" placeholder="<?php echo $nombreDir;?>" id="direccion" name="direccion" required><br>
           <button id="boton" type="submit" name="Enviar">Actualizar datos</button><br>
         </form>
         </div>

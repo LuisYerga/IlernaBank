@@ -97,7 +97,7 @@
               echo '<p>Por pagar: ' . $fila['cantidad_porPagar'] . '</p>';
               ?>
               <form action="../conexiones/gestionPrestamos.php" method="POST">
-                <input type="hidden" name="id_prestamos" value="<?php echo $fila['id_prestamos']; ?>">
+                <input type="hidden" name="id_prestamos" value="<?php echo $fila['id_prestamos']; ?>" required>
                 <button type="submit" name="Pagar prestamo">Pagar prestamo</button>
               </form>
               <?php
