@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactos Admin</title>
+    <title>Contactos</title>
     <!--CSS-->
     <link href="../../css/bootstrap.css" rel="stylesheet">
     <link href="../../css/headers.css" rel="stylesheet">
@@ -53,7 +53,7 @@
   <main>
     <section class="listaContactos">
         <div class="nuevo" id="nuevoContacto">
-            <a class="button opt" id="agregar" href="agregarContacto.php"><img src="../../img/mas.png"><h3>Agregar Contacto</h3></a>
+            <a class="button opt" id="agregar" href="agregarContactoAdmin.php"><img src="../../img/mas.png"><h3>Agregar Contacto</h3></a>
         </div>
         <div class="listado">
         <?php 
@@ -76,9 +76,10 @@
               }
               ?>
               <div id="<?php echo $id?>" class="lista">
+              <img class="imgPerfil" src="<?php echo $fila['imagen']?>">
               <form action="../conexiones/gestionMensajes.php" method="POST">
-                <input type="hidden" name="id_agregado" value="<?php echo $fila['id_agregado']; ?>" required>
-                <button type="submit" name="Enviar"><p><?php echo $fila['nombre_agregado']?></p></button>
+                <input type="hidden" name="id_agregado" value="<?php echo $fila['id_agregado']; ?>"required>
+                <button type="submit" id="Contacto"><p><?php echo $fila['nombre_agregado']?></p></button>
               </form>
               </div>
               <hr>
