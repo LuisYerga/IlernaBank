@@ -1,112 +1,133 @@
-%background-styling {
+section{
     background-color: $color-fondo;
 }
-
-%odd-even-styling {
-    #impar & {
-        color: $contraste-blanco;
-        background-color: $contraste-negro;
-    }
-    #par & {
-        color: $contraste-negro;
-        background-color: $contraste-blanco;
-    }
+main{    
+    background-color: $color-fondo;
+}
+#impar{
+    color: $contraste-blanco;
+    background-color: $contraste-negro;
 }
 
-%button-styling {
-    margin-left: 10px;
-    font-size: 16px;
+#par{
+    color:$contraste-negro;
+    background-color:  $contraste-blanco ;
 }
 
-%mobile-width {
-    display: block;
-    margin: 0 auto;
-}
-
-section, main {
-    @extend %background-styling;
-}
-
-#impar, #par {
-    @extend %odd-even-styling;
-}
-
-.lista {
+.lista{
     display: flex;
     justify-content: center;
-
-    @media only screen and (max-width: 785px), (max-width: 1165px) {
-        display: list-item;
-    }
 }
 
-.separador {
+.separador{
     border-left: 1px solid;
     height: 10px;
     margin: 9px;
-
-    @media only screen and (max-width: 785px), (max-width: 1165px) {
-        border-left: none;
-        display: inline-block;
-        height: auto;
-        margin: 0;
-        width: 100%;
-        border-top: 1px solid;
-    }
 }
-
-.nuevo {
+.nuevo{
     display: flex;
     justify-content: center;
     align-content: center;
     padding-top: 2vh;
     margin-bottom: 4vh;
     background-color: $color-fondo;
-
-    img {
-        width: 40px;
-        height: 40px;
-
-        @media only screen and (max-width: 785px) {
-            width: 30px;
-            height: 30px;
-        }
-    }
+}
+.nuevo img{
+    width: 40px;
+    height: 40px;
 }
 
-#par button, #impar button {
-    @extend %button-styling;
+#par button{
+    margin-left: 10px;
+    font-size: 16px;
+    color:$contraste-negro;
+    background-color:  $contraste-blanco ;
 }
 
-.opt {
-    display: inline-flex;
+#impar button{
+    margin-left: 10px;
+    font-size: 16px;
+    color: $contraste-blanco;
+    background-color: $contraste-negro;
+}
+
+.opt{
+    display:inline-flex;
     border: none;
     text-decoration: none;
     background-color: $color-fondo;
     color: $contraste-blanco;
 }
 
-#listaPrestamosAdmin {
+#listaPrestamosAdmin{
     padding-top: 50px;
 }
 
-#Contacto {
+#Contacto{
     width: 50vw;
-
-    @media only screen and (max-width: 785px), (max-width: 1165px) {
-        width: auto;
-    }
 }
 
-.imgPerfil {
+.imgPerfil{
     width: 50px;
-
-    @media only screen and (max-width: 785px) {
+}
+@media only screen and (max-width: 785px) {
+    .lista{
+        display: list-item;
+        justify-content: center;
+    }
+    .separador{
+        border-left: none;
+        display: inline-block;
+        height: auto;
+        margin: 0;
+        width: 100%;
+        border-top: 1px solid
+    }
+    p{
+        text-align: center;
+        margin-bottom: 0%;
+    }
+    .nuevo img{
         width: 30px;
         height: 30px;
     }
+
+    input,
+    #par button,
+    .imgPerfil,
+    #impar button {
+        display: block;
+        margin: 0 auto;
+    }
+     
 }
 
-input, #par button, #impar button {
-    @extend %mobile-width;
+@media only screen and (max-width: 1165px) {
+    .listadoAdmin .lista{
+        display: list-item;
+        justify-content: center;
+    }
+    .listadoAdmin .separador{
+        border-left: none;
+        display: inline-block;
+        height: auto;
+        margin: 0;
+        width: 100%;
+        border-top: 1px solid
+    }
+    .listadoAdmin p{
+        text-align: center;
+        margin-bottom: 0%;
+    }
+    .listadoAdmin .nuevo img{
+        width: 30px;
+        height: 30px;
+    }
+
+    .listadoAdmin input,
+    #par button,
+    #impar button {
+        display: block;
+        margin: 0 auto;
+    }
 }

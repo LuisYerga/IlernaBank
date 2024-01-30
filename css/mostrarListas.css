@@ -1,24 +1,19 @@
-section, main {
+section {
   background-color: #151515;
 }
 
-#impar #impar, #impar #par {
+main {
+  background-color: #151515;
+}
+
+#impar {
   color: #d9d9d9;
   background-color: #232323;
 }
-#par #impar, #par #par {
+
+#par {
   color: #232323;
   background-color: #d9d9d9;
-}
-
-#par button, #impar button {
-  margin-left: 10px;
-  font-size: 16px;
-}
-
-input, #par button, #impar button {
-  display: block;
-  margin: 0 auto;
 }
 
 .lista {
@@ -29,26 +24,11 @@ input, #par button, #impar button {
       -ms-flex-pack: center;
           justify-content: center;
 }
-@media only screen and (max-width: 785px), (max-width: 1165px) {
-  .lista {
-    display: list-item;
-  }
-}
 
 .separador {
   border-left: 1px solid;
   height: 10px;
   margin: 9px;
-}
-@media only screen and (max-width: 785px), (max-width: 1165px) {
-  .separador {
-    border-left: none;
-    display: inline-block;
-    height: auto;
-    margin: 0;
-    width: 100%;
-    border-top: 1px solid;
-  }
 }
 
 .nuevo {
@@ -64,15 +44,24 @@ input, #par button, #impar button {
   margin-bottom: 4vh;
   background-color: #151515;
 }
+
 .nuevo img {
   width: 40px;
   height: 40px;
 }
-@media only screen and (max-width: 785px) {
-  .nuevo img {
-    width: 30px;
-    height: 30px;
-  }
+
+#par button {
+  margin-left: 10px;
+  font-size: 16px;
+  color: #232323;
+  background-color: #d9d9d9;
+}
+
+#impar button {
+  margin-left: 10px;
+  font-size: 16px;
+  color: #d9d9d9;
+  background-color: #232323;
 }
 
 .opt {
@@ -92,18 +81,69 @@ input, #par button, #impar button {
 #Contacto {
   width: 50vw;
 }
-@media only screen and (max-width: 785px), (max-width: 1165px) {
-  #Contacto {
-    width: auto;
-  }
-}
 
 .imgPerfil {
   width: 50px;
 }
+
 @media only screen and (max-width: 785px) {
-  .imgPerfil {
+  .lista {
+    display: list-item;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .separador {
+    border-left: none;
+    display: inline-block;
+    height: auto;
+    margin: 0;
+    width: 100%;
+    border-top: 1px solid;
+  }
+  p {
+    text-align: center;
+    margin-bottom: 0%;
+  }
+  .nuevo img {
     width: 30px;
     height: 30px;
+  }
+  input,
+  #par button,
+  .imgPerfil,
+  #impar button {
+    display: block;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 1165px) {
+  .listadoAdmin .lista {
+    display: list-item;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .listadoAdmin .separador {
+    border-left: none;
+    display: inline-block;
+    height: auto;
+    margin: 0;
+    width: 100%;
+    border-top: 1px solid;
+  }
+  .listadoAdmin p {
+    text-align: center;
+    margin-bottom: 0%;
+  }
+  .listadoAdmin .nuevo img {
+    width: 30px;
+    height: 30px;
+  }
+  .listadoAdmin input,
+  #par button,
+  #impar button {
+    display: block;
+    margin: 0 auto;
   }
 }

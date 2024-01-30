@@ -21,22 +21,12 @@ section {
   color: #232323;
   border-radius: 1%;
 }
-@media only screen and (min-width: 1024px) {
-  .recuadro {
-    width: 50vw;
-  }
-}
 
 #boton {
   margin-top: 5%;
   margin-bottom: 20px;
   background-color: #151515;
   color: #d9d9d9;
-}
-@media only screen and (min-width: 1024px) {
-  #boton {
-    margin-top: 3%;
-  }
 }
 
 .pincel {
@@ -48,4 +38,13 @@ section {
 
 .imgPerfil {
   width: 100px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .recuadro {
+    width: 50vw;
+  }
+  #boton {
+    margin-top: 3%;
+  }
 }

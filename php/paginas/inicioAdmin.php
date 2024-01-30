@@ -27,15 +27,18 @@
         <h1>Esteban&Co</h1>
       </div>
       <div class="iconosMenu">
-        <a class="button" href="contactos.php" id="correo"><img src="../../img/correo.png"></a>
+        <a class="button" href="contactosAdmin.php" id="correo"><img src="../../img/correo.png"></a>
         <a class="button" id="menu"><img src="<?php echo $imagenPerfil;?>"></a>
       </div>
     </div>
   </header>
   <aside class="aside" id="aside">
     <div class="head">
+       <div id="Casa" class="opciones">
+        <a class="button option" id="casa" href="inicioAdmin.php"><img src="../../img/inicio.png"><p>Inicio</p></a>
+      </div>
       <div id="Buzon" class="opciones">
-        <a class="button option" id="buzon" href="contactos.php"><img src="../../img/correo2.png"><p>Buzón</p></a>
+        <a class="button option" id="buzon" href="contactosAdmin.php"><img src="../../img/correo2.png"><p>Buzón</p></a>
       </div>
       <div id="Prestamos" class="opciones">
         <a class="button option" id="prestamos" href="listaPrestamosAdmin.php"><img src="../../img/usuario.png"><p>Prestamos</p></a>
